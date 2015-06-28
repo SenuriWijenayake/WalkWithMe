@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+	
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+  </head>
+  
+  <body ng-app="starter">
+
+    <ion-pane>
+	<div class="text-center">
+      <ion-header-bar class="bar-calm">
+        <h1 class="title">My Walking History</h1>
+      </ion-header-bar>
+	  
+      <ion-content>
+			<ion-list>
+				<ion-item ><h2 style="font-weight:bold">Walk on 10th March</h2><br>
+				Joined walk with Miller and Mandy.<br>
+				Walked 1000 steps.
+				</ion-item>
+				
+				<ion-item ><h2 style="font-weight:bold">Walk on 25th March</h2><br>
+				Joined walk with Ben and Miller.<br>
+				Walked 2000 steps.
+				</ion-item>
+				
+				<ion-item ><h2 style="font-weight:bold">Walk on 10th April</h2><br>
+				Joined walk with Miller and Mandy.<br>
+				Walked 1000 steps.
+				</ion-item>
+				
+				<ion-item ><h2 style="font-weight:bold">Walk on 20th April</h2><br/>
+				Joined walk with Miller and Mandy.<br/>
+				Walked 1000 steps.
+				</ion-item>
+				
+				<ion-item ><h2 style="font-weight:bold">Walk on 30th April</h2><br/>
+				Did not start the walk.
+				</ion-item>
+				</ion-list>
+				
+				<div style="padding-top:15px; padding-bottom:15px;">
+				<button class="button icon-left ion-checkmark button-balanced" style="width:35%;">OK</button>
+				<button class="button icon-left ion-close button-assertive" style="width:35%;">Clear</button>
+				</div>
+      </ion-content>
+	  
+   </ion-pane>
+   </div>
+  </body>
+</html>
+
+
+<!-- <div class="col">
+			   
+                    <label button class="button button-big  button-balanced" >
+                      OK
+                    </button>
+					</label>
+                     <label button class="button button-big  button-assertive">
+                      Clear
+                    </button>
+					
+               </div> -->
