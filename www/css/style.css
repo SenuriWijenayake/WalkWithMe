@@ -18,12 +18,6 @@
 font-size: 30px;
 }
 
-.loader{
-	align:center;
-	size:100px;
-	visibility:true;
-}
-
 .reminder{
 	top:0px;
 	color: #ff0000;
@@ -241,4 +235,19 @@ input.textfield {
     border: 1px solid #cbcbcb;
     margin-left:auto;
 	margin-right:auto;
+}
+
+p {
+  text-align: right;
+  margin-top: 5px !important;
+  margin-bottom : 5px !important;
+  margin-right: 10px ! important;
+  }
+  
+ 
+.spinner svg {
+	width: 10% !important;
+	height: 10% !important;
+	stroke: #005C99;
+	fill: #005C99;
 }
