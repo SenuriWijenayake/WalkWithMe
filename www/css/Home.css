@@ -39,3 +39,19 @@
   height: 24px;
   border-width: 1px;
 }
+
+
+p {
+  text-align: right;
+  margin-top: 5px !important;
+  margin-bottom : 5px !important;
+  margin-right: 10px ! important;
+  }
+  
+ 
+.spinner svg {
+	width: 10% !important;
+	height: 10% !important;
+	stroke: #005C99;
+	fill: #005C99;
+}
