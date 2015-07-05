@@ -1,0 +1,4 @@
+Create a database named walkwithme
+Create the two tables by running the two scripts. The data will be entered as well. 
+Then place the Test folder which is inside PHP folder, inside the WWW folder in WAMP.
+Start the localhost and Select Test Project. Click on the php scripts to run.
