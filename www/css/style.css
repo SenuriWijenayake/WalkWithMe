@@ -1,13 +1,25 @@
 /* Empty. Add your own CSS if you like */
+.timePicker
+{
+
+    width:213.333px;
+    height: 38px;
+    font-size: 15px;
+    color: #F8FBEF;
+    background-color:#242930;    
+    text-align: center;
+    text-indent: 15px;
+    border: 1px solid #c0dec0;
+}
 
 .listItem{
     color: black;
     top: 60px;
     left: 30px;
-	bottom:30px;
+	  bottom:30px;
     width: 100%;
     font-size: 20px;
-	text-align: center;
+	  text-align: center;
 }
 
 .listback{
@@ -39,7 +51,7 @@ table {
 
 .datepicker {
   position: relative;
-  margin: 60px auto;
+  margin: 30px auto;
   padding: 4px;
   font-size: 10px;
   text-align: center;

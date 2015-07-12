@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="WalkingApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -21,13 +21,15 @@
 
 	
     <!-- your app's js -->
+    <script type = "text/javascript" src="../PHP/angular.min.js"></script>
+    <script type = "text/javascript" src="../PHP/app.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
 	
   </head>
   
-  <body ng-app="starter">
+  <body  data-ng-controller="simpleController">
 
     <ion-pane>
 	<div class="text-center">
@@ -37,30 +39,13 @@
 	  
       <ion-content class="scroll-content ionic scroll has-header">
 			<ion-list>
-				<ion-item><h2 style="font-weight:bold;font-size:25px; margin-top:10px;">Walk on 10th March</h2>
-				Joined walk with Miller and Mandy.<br>
-				Walked 1000 steps.<br>
-				</ion-item>
+				<ion-item data-ng-repeat ="walk in walks track by $index">
+
+				<h2 style="font-weight:bold;font-size:25px; margin-top:10px;">Walk on {{walk.DayOfWalk}}  <sup>th</sup> of {{walk.MonthOfWalk}}</h2>
 				
-				<ion-item ><h2 style="font-weight:bold;font-size:25px;margin-top:10px;">Walk on 25th March</h2>
-				Joined walk with Ben and Miller.<br>
-				Walked 2000 steps.<br>
+				Joined walk with {{walk.Participants}} .<br>
+					
 				</ion-item>
-				
-				<ion-item ><h2 style="font-weight:bold;font-size:25px;">Walk on 10th April</h2>
-				Joined walk with Miller and Mandy.<br>
-				Walked 1000 steps.<br>
-				</ion-item>
-				
-				<ion-item ><h2 style="font-weight:bold;font-size:25px;">Walk on 20th April</h2>
-				Joined walk with Miller and Mandy.<br/>
-				Walked 1000 steps.<br>
-				</ion-item>
-				
-				<ion-item ><h2 style="font-weight:bold;font-size:25px;">Walk on 30th April</h2>
-				Did not start the walk.<br>
-				</ion-item>
-				</ion-list>
 				
 				<div style="padding-top:15px; padding-bottom:15px;">
 				<button class="button icon-left ion-checkmark button-balanced" style="width:35%;">OK</button>
