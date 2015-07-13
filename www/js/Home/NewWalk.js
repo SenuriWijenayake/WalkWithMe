@@ -6,12 +6,3 @@ function tableDataOnClick(el)
 	
 }
 
-function storeWalk()
-{
-	var Date = sessionStorage.getItem('Date');
-	var Month = sessionStorage.getItem('Month');
-	var Year = sessionStorage.getItem('Year');
-	var time = document.getElementById('timePicker').value;
-	alert(time);
-
-}
