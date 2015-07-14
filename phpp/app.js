@@ -24,7 +24,7 @@ angular.module('WalkingApp').service('newWalkService', function($http){
         return $http({
           
           method : 'POST',
-          url: 'http://localhost/WalkWithMe/php/index.php/walk/save_walk',
+          url: 'http://localhost/WalkWithMe/ci/index.php/walk/save_walk',
           data: { "DayOfWalk" : date , "MonthOfWalk": month, "YearOfWalk" : year, "TimeOfWalk" : time },
           
         });
