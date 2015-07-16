@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+/*angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -25,4 +25,22 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+});*/
+
+//Code for WalkWithMe
+
+//Registering Controller
+angular.module('WalkingApp').controller('registerController',function($scope, RegisteringService)
+{
+    $scope.Register = function()
+    {
+      alert("inside the controller " + $scope.mobile_number);
+      RegisteringService.RegisterUser($scope.mobile_number,$scope.username).success(function(data){
+        alert(data);
+        alert("Successfully Registered");
+    });
+
+    }
+    
+
 });

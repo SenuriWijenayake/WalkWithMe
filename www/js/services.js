@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+/*angular.module('starter.services', [])
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -48,3 +48,25 @@ angular.module('starter.services', [])
     }
   };
 });
+*/
+
+
+//Registering service
+
+angular.module('WalkingApp').service('RegisteringService', function($http){
+
+    return {
+      
+      RegisterUser : function (mobile_number,username){
+              alert(mobile_number);
+              return $http({
+                  method : 'POST',
+                  url: 'http://localhost/WalkWithMe/php/index.php/HomeController/registerUser',
+                  data : {"UserId" : mobile_number, "Username" : username},
+        }).success(function(result){
+            return result;
+        });
+      }
+    }      
+});
+
