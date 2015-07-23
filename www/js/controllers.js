@@ -1,11 +1,17 @@
 angular.module('WalkWithMeApp.controllers', [])
 
-.controller('StartCtrl', function($scope,$ionicLoading, $state) {
+.controller('StartCtrl', function($scope,$ionicLoading, $state, userService) {
 
     $ionicLoading.show({
       template: 'Loading...'
     });
-    
+
+    userService.ServerStats()
+        .success(function(data, status) {
+            alert(data.statusCode);
+        });
+
+
     // check to see if the server is live // Service
     //var data  = {"statusCode" : 0 , "statusDesc" : "Ok"};
 
