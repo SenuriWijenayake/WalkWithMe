@@ -1,4 +1,10 @@
 {
-  "name": "WalkWithMe",
-  "app_id": ""
+	"app_id": "",
+	"folders":
+	[
+		{
+			"path": "/C/Users/chandimal/Documents/GitHub/WalkWithMe"
+		}
+	],
+	"name": "WalkWithMe"
 }

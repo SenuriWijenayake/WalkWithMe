@@ -1,0 +1,23 @@
+<ion-pane>
+	<ion-header-bar class="bar bar-header bar-calm">
+		<h1 class="title" style="text-center">Walk With Me</h1>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list list-inset">
+			<h2>Enter the pin code</h2>
+		  <label class="item item-input">		  	
+		    <input type="text" placeholder="Eg: 7784">
+		  </label>		  
+		  <button class="button button-block button-positive center" ng-click="validate()">
+  			Validate me
+		</button>		
+		</div>		
+		<!-- show if there is a error -->
+		<div class="list list-inset">
+			<h2>Having trouble</h2>
+			<button class="button button-block button-positive center">
+  				Send another code
+			</button>		  
+		</div>		
+	</ion-content>
+</ion-pane>
