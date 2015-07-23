@@ -39,6 +39,7 @@ angular.module('WalkWithMeApp.controllers', [])
 
     // show login ctrl
     $scope.register = function(){
+        $ionicLoading.show({ template: 'Item Added!', noBackdrop: true, duration: 2000 });
         $state.go('register-step1');
     }
 })
