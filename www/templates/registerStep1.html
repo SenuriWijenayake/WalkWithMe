@@ -6,11 +6,11 @@
 		<div class="list list-inset">
 			<h2>Mobile number</h2>
 		  <label class="item item-input">		  	
-		    <input type="text" placeholder="Eg: +94772225588">
+		    <input type="text" placeholder="Eg: +94772225588" ng-model="registrationData.mobileNo">
 		  </label>
 		  <h2>Your name</h2>
 		  <label class="item item-input">		  	
-		    <input type="text" placeholder="Eg: Amanda Cove">
+		    <input type="text" placeholder="Eg: Amanda Cove" ng-model="registrationData.nickName">
 		  </label>
 		  <button class="button button-block button-positive center" ng-click="sendCode()">
   			SMS Code

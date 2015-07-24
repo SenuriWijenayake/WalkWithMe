@@ -1,13 +1,24 @@
 //TODO: Change the GET to a POST
 // User services - authentication / server stat / registration
+
 angular.module('WalkWithMeApp.services',[]).factory('userService', function($http){
     return {      
+
+      // Sucessfull : {"statusCode":0,"statusDes":"ok"}
+      // Error      : {"statusCode":Not zero,"statusDes":"ok"}      
       ServerStats : function (){              
               return $http({
                   method : 'GET',
-                  url: 'http://localhost:8080/json/stat.json'
+                  url: '/json/stat.json'
+              });
+      }, // end function      
+      Register : function (){              
+              return $http({
+                  method : 'GET',
+                  url: '/json/register.json'
               });
       } // end function
+
     }; // end return     
 })
 

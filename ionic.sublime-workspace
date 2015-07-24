@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"mob",
+				"mobileNo"
+			],
+			[
+				"nick",
+				"nickName"
+			],
+			[
+				"re",
+				"registrationData"
+			],
+			[
 				"serv",
 				"services"
 			],
@@ -19,6 +31,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/controllers.js",
+			"settings":
+			{
+				"buffer_size": 4995,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/templates/registerStep1.html",
+			"settings":
+			{
+				"buffer_size": 683,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/json/stat.json",
+			"settings":
+			{
+				"buffer_size": 33,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -48,22 +84,25 @@
 	},
 	"file_history":
 	[
-		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/controllers.js",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/services.js",
-		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/app.js",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/json/register.json",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/index.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/json/stat.json",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/css/style.css",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/history.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/walkNow.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/menu.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/motivation.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/controllers.js",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/app.js",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/start.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/angular.min.js",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/css/Home.css",
-		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/menu.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/login.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/register-step1.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/register-step2.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/newWalk.html",
-		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/history.html",
-		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/walkNow.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/join.html",
-		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/start.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/LogIn.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/chat-detail.html",
 		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/server/startserver.bat",
@@ -85,6 +124,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"localStorage",
 			"()\">"
 		],
 		"highlight": true,
@@ -103,14 +143,96 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 4995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3397,
+								3397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1278.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/templates/registerStep1.html",
+					"settings":
+					{
+						"buffer_size": 683,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								340,
+								340
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/json/stat.json",
+					"settings":
+					{
+						"buffer_size": 33,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"input":
 	{
