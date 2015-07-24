@@ -25,8 +25,9 @@ angular.module('WalkWithMeApp.controllers', [])
                     var loginTimer = setInterval( function(){
                     clearInterval(loginTimer);                    
                     $state.go('login');
-                    },2000);
+                    },1000);
             }else{
+                // Save to the rootScope can be used anywhere in the application
                 $rootScope.mobileNo = $window.localStorage['mobileNo'];
                 $rootScope.nickName = $window.localStorage['nickName'];    
                 $state.go('menu');
