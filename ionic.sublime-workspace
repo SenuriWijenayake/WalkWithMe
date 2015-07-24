@@ -3,38 +3,35 @@
 	{
 		"selected_items":
 		[
+			[
+				"serv",
+				"services"
+			],
+			[
+				"log",
+				"loginSuccess"
+			],
+			[
+				"stat",
+				"statusCode"
+			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"contents": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width\">\n    <title>WalkWithMe</title>\n\n    <link href=\"lib/ionic/css/ionic.css\" rel=\"stylesheet\">\n    <link href=\"css/style.css\" rel=\"stylesheet\">\n\n    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above\n    <link href=\"css/ionic.app.css\" rel=\"stylesheet\">\n    -->\n\n    <!-- ionic/angularjs js -->\n    <script src=\"lib/ionic/js/ionic.bundle.js\"></script>\n\n    <!-- cordova script (this will be a 404 during development) -->\n    <script src=\"cordova.js\"></script>\n\n    <!-- your app's js -->\n    <script src=\"js/app.js\"></script>\n    <script src=\"js/controllers.js\"></script>\n  </head>\n\n  <body ng-app=\"WalkWithMeApp\">\n	   <div ui-view></div>\n  </body>\n</html>\n",
-			"file": "www/index.html",
-			"file_size": 890,
-			"file_write_time": 130821117653841133,
-			"settings":
-			{
-				"buffer_size": 864,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/js/app.js",
-			"settings":
-			{
-				"buffer_size": 1437,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 0.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -51,6 +48,25 @@
 	},
 	"file_history":
 	[
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/controllers.js",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/services.js",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/app.js",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/index.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/json/stat.json",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/js/angular.min.js",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/css/Home.css",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/menu.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/login.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/register-step1.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/register-step2.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/newWalk.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/history.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/walkNow.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/join.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/start.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/LogIn.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/www/templates/chat-detail.html",
+		"/C/Users/chandimal/Documents/GitHub/WalkWithMe/server/startserver.bat",
 		"/D/Projects/JuztMove/walkwithme/temp/basic/www/css/style.css"
 	],
 	"find":
@@ -69,6 +85,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"()\">"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -86,65 +103,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/index.html",
-					"settings":
-					{
-						"buffer_size": 864,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								864,
-								864
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/js/app.js",
-					"settings":
-					{
-						"buffer_size": 1437,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								294,
-								281
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -154,7 +114,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{

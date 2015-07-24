@@ -1,51 +1,52 @@
 angular.module('WalkWithMeApp.controllers', [])
 
-.controller('StartCtrl', function($scope,$ionicLoading, $state, userService) {
+.controller('StartCtrl', function($window, $rootScope, $scope,$ionicLoading, $state, userService, errorService) {
 
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
+    $ionicLoading.show({ template: 'Loading...' });
 
     userService.ServerStats()
         .success(function(data, status) {
-            alert(data.statusCode);
+
+            // TODO : Remove Hard coding in live
+            //$window.localStorage['mobileNo'] = '94777331370';
+            //$window.localStorage['nickName'] = 'Chandi Wicky';
+
+            if ( data.statusCode > 0 ){
+                errorService.ShowError('Server appeared to be offline or in maintainance, Please try again later');
+                return;
+            }
+
+            // check and see if already logged in // localstorage go to menu
+            //localStorage.mobileNo
+            //localStorage.nickName
+            // if not show login/Register state
+            if ( !$window.localStorage['mobileNo'] ){
+                    // Delay a little before loading the 
+                    var loginTimer = setInterval( function(){
+                    clearInterval(loginTimer);                    
+                    $state.go('login');
+                    },2000);
+            }else{
+                $rootScope.mobileNo = $window.localStorage['mobileNo'];
+                $rootScope.nickName = $window.localStorage['nickName'];    
+                $state.go('menu');
+            }
+            
+            $ionicLoading.hide();            
+        }).error( function(data, status) {
+            // htpp error
+            //show error message and exit the application
+            errorService.ShowError('Server appeared to be offline or in maintainance(HTTP), Please try again later');
+            return;
         });
 
-
-    // check to see if the server is live // Service
-    //var data  = {"statusCode" : 0 , "statusDesc" : "Ok"};
-
-    //Service.login(
-    //    success : loginSuccess );
-
-    // if not show error message // exit application
-
-    //if ( data.statusCode != 0)  {
-    //    return;
-    //}
-    // check and see if already logged in // localstorage go to menu
-    //localStorage.mobileNo
-    //localStorage.nickName
-
-    // if not show login/Register state
-
-    // Test code to hide the loading
-    var loginTimer = setInterval( function(){
-      clearInterval(loginTimer);
-      $ionicLoading.hide();      
-      $state.go('login')
-    },2000);
-
-    $scope.loginSuccess = function(){
-
-    }
 })
 
 .controller('LoginCtrl', function($scope,$ionicLoading, $state) {
 
     // show login ctrl
     $scope.register = function(){
-        $ionicLoading.show({ template: 'Item Added!', noBackdrop: true, duration: 2000 });
+        
         $state.go('register-step1');
     }
 })
