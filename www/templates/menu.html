@@ -1,4 +1,4 @@
-<ion-pane>
+<ion-pane on-swipe-right="onSwipeRight()">
 	<ion-header-bar class="bar bar-header bar-calm">
 		<h1 class="title" style="text-center">Walk With Me</h1>
 	</ion-header-bar>
@@ -36,7 +36,7 @@
   		  </div>
 
   		   <a class="button icon-right ion-chevron-right" ui-sref="join">Join</a>
-  		   <button class="button icon-left ion-star button-positive" ui-sref="newWalk">Create new walk</button>
+  		   <button class="button icon-left ion-star button-positive" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
 		</div>
 
 		<div class="item">

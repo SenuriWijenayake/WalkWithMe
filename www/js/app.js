@@ -79,4 +79,10 @@ angular.module('WalkWithMeApp', ['ionic', 'WalkWithMeApp.controllers', 'WalkWith
             templateUrl: "templates/history.html",
             controller: 'HistoryCtrl'
         })
+
+         .state('motivation', {
+            url: "/motivation",
+            templateUrl: "templates/motivation.html",
+            controller: 'MotivationCtrl'
+        })
 });

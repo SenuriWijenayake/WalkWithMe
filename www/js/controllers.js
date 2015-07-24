@@ -8,8 +8,8 @@ angular.module('WalkWithMeApp.controllers', [])
         .success(function(data, status) {
 
             // TODO : Remove Hard coding in live
-            //$window.localStorage['mobileNo'] = '94777331370';
-            //$window.localStorage['nickName'] = 'Chandi Wicky';
+            $window.localStorage['mobileNo'] = '94777331370';
+            $window.localStorage['nickName'] = 'Chandi Wicky';
 
             if ( data.statusCode > 0 ){
                 errorService.ShowError('Server appeared to be offline or in maintainance, Please try again later');
@@ -75,6 +75,10 @@ angular.module('WalkWithMeApp.controllers', [])
   $scope.newWalk = function(){
         alert("New walk");
     }
+
+    $scope.onSwipeRight = function(){
+         $state.go('motivation');
+    }
 })
 
 .controller('WalkCtrl', function($scope,$ionicLoading, $state) {
@@ -84,8 +88,12 @@ angular.module('WalkWithMeApp.controllers', [])
         alert("Create");
     }
 
-  $scope.newWalk = function(){
+    $scope.newWalk = function(){
         alert("New walk");
+    }
+
+    $scope.onSwipeRight = function(){
+         $state.go('menu');
     }
 })
 .controller('HistoryCtrl', function($scope,$ionicLoading, $state) {
@@ -93,6 +101,19 @@ angular.module('WalkWithMeApp.controllers', [])
     // show login ctrl
     $scope.history = function(){
         alert("history");
+    }
+
+    $scope.onSwipeRight = function(){
+        $state.go('menu');
+    }
+})
+
+.controller('MotivationCtrl', function($scope,$ionicLoading, $state) {
+
+    // show login ctrl
+    $scope.onSwipeLeft = function(){
+        
+        $state.go('menu');
     }
 })
 ;
