@@ -17,7 +17,16 @@ angular.module('WalkWithMeApp.services',[]).factory('userService', function($htt
                   method : 'GET',
                   url: '/json/register.json'
               });
-      } // end function
+      },
+      Menu : function (){              
+              return $http({
+                  method : 'GET',
+                  url: 'http://localhost/WalkWithMe/php/index.php/MenuController/loadMenu',
+                  data : {"UserId" : 713456781 , "Username" : "Mandy Moore"}
+        }).success(function(data){
+              console.log(data);
+        });
+      }// end function
 
     }; // end return     
 })
