@@ -113,19 +113,67 @@ angular.module('WalkWithMeApp.controllers', [])
 
 .controller('MenuCtrl', function($scope,$ionicLoading, $state) {
 
-    // show login ctrl
-    $scope.history = function(){
-        alert("history");
-    }
+   var data = {
+  
 
-  $scope.newWalk = function(){
-        alert("New walk");
-    }
+    "nextWalk": {
 
-    $scope.onSwipeRight = function(){
-         $state.go('motivation');
-    }
-})
+            "Date": "Sat 25, July 2015",
+
+        "Time": "5.00 pm",
+    
+        "Participants": ["Senuri, ","Mandy, ","Kasuni"]
+
+       
+  },
+ 
+
+    "invitations": [
+    
+        {"Inviter" : "Jerry" , "DateInvite" : "Wed 22, July 2015" , "Time" : "5.00 am", "Pariticipants" : ["Senuri","Mandy","Kasuni"]},
+        {"Inviter" : "Tom" , "DateInvite" : "Monday 20, July 2015" , "Time" : "5.30 am", "Pariticipants" : ["Senuri","Tim","Tic"]}
+  
+        ],
+ 
+
+    "walkHistory": [
+    
+        {"Month" : "July" , "Count" : 4},
+
+            {"Month" : "June" , "Count" : 3},
+   
+        {"Month" : "May" , "Count" : 2}
+ 
+        ]
+
+
+};
+
+    // My Next Walk
+    
+    $scope.date = data.nextWalk.Date;
+    $scope.walkTime = data.nextWalk.Time;
+$scope.walkParticipants = data.nextWalk.Participants;
+
+
+
+// Walking Invitations
+
+$scope.inviteWalk = data.invitations;
+
+// History
+
+$scope.historyWalk = data.walkHistory;
+//$scope.historyCount = data.walkHistory.Count;
+
+
+
+
+
+  
+}
+)
+
 
 .controller('WalkCtrl', function($scope,$ionicLoading, $state) {
 
