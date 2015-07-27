@@ -1,272 +1,881 @@
-/*
-.scroll-content {
-    background: url(../img/sampleAvatar.jpg);
-}
-*/
 
-
-/* Empty. Add your own CSS if you like */
-.timePicker
-{
-
-    width:213.333px;
-    height: 38px;
-    font-size: 15px;
-    color: #F8FBEF;
-    background-color:#242930;    
-    text-align: center;
-    text-indent: 15px;
-    border: 1px solid #c0dec0;
+@font-face {
+    font-family: 'museo300';
+    src: url('../font/museo300-regular-webfont.eot');
+    src: url('../font/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/museo300-regular-webfont.woff2') format('woff2'),
+    url('../font/museo300-regular-webfont.woff') format('woff'),
+    url('../font/museo300-regular-webfont.ttf') format('truetype'),
+    url('../font/museo300-regular-webfont.svg#museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.listItem{
-    color: black;
-    top: 60px;
-    left: 30px;
-	  bottom:30px;
+@font-face {
+    font-family: 'museo500';
+    src: url('../font/museo500-regular-webfont.eot');
+    src: url('../font/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/museo500-regular-webfont.woff2') format('woff2'),
+    url('../font/museo500-regular-webfont.woff') format('woff'),
+    url('../font/museo500-regular-webfont.ttf') format('truetype'),
+    url('../font/museo500-regular-webfont.svg#museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo700';
+    src: url('../font/museo700-regular-webfont.eot');
+    src: url('../font/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/museo700-regular-webfont.woff2') format('woff2'),
+    url('../font/museo700-regular-webfont.woff') format('woff'),
+    url('../font/museo700-regular-webfont.ttf') format('truetype'),
+    url('../font/museo700-regular-webfont.svg#museo700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body{height:100%; width: 100%;}
+
+body{
+    padding: 0;
+    margin: 0;
+    background:#048cd4 url("../img/bg_main.png") no-repeat left;
+    background-size: contain;
+}
+
+::-webkit-input-placeholder {
+    color:  #fff !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color:  #fff !important;
+}
+:-ms-input-placeholder {
+    color:  #fff !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color:  #fff !important;
+}
+
+img, p, div, a, h1, h2, h3, h4, h5, h6 {padding: 0; margin: 0; outline: 0; border: 0;}
+img {width:100%;}
+
+.ion-pane, .ion-content {height:100% !important;}
+
+.panel-loading {
+    position: relative;
+    width: 240px;
+    height: 164px;
+    margin-top: -82px;
+    top:50%;
+}
+
+.panel-header-1 {
     width: 100%;
-    font-size: 20px;
-	  text-align: center;
+    height: auto;
+    margin-top: 50px;
+    display: block;
 }
 
-.listback{
-	background-color : #00FFBF;
-}
-
-.title{
-font-size: 30px;
-}
-
-.reminder{
-	top:0px;
-	color: #ff0000;
-	text-align:center;
-		
-}
-
-#datepicker-container{
-  text-align:center;
-}
-#datepicker-center{
-  display:inline-block;
-  margin:0 auto;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.datepicker {
-  position: relative;
-  margin: 30px auto;
-  padding: 4px;
-  font-size: 10px;
-  text-align: center;
-  background: #242930;
-  border: 1px solid #0e1013;
-  border-collapse: separate;
-  border-radius: 4px 4px 3px 3px;
-  -webkit-box-shadow: 0 1px #181c21, 0 2px #14171b, 0 3px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px #181c21, 0 2px #14171b, 0 3px 3px rgba(0, 0, 0, 0.3);
-}
-.datepicker:before, .datepicker:after {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -4px;
-  border: 4px solid transparent;
-  border-bottom-color: #242930;
-}
-.datepicker:before {
-  top: -9px;
-  border-bottom-color: #14171b;
-}
-
-.datepicker-caption {
-  display: block;
-  position: relative;
-  line-height: 29px;
-  background: #333941;
-  border: 1px solid #1b1e24;
-  border-bottom-color: #181b21;
-  border-radius: 3px 3px 0 0;
-  background-image: -webkit-linear-gradient(top, #414b56, #323841 50%, #2b323a 50%, #252a31);
-  background-image: -moz-linear-gradient(top, #414b56, #323841 50%, #2b323a 50%, #252a31);
-  background-image: -o-linear-gradient(top, #414b56, #323841 50%, #2b323a 50%, #252a31);
-  background-image: linear-gradient(to bottom, #414b56, #323841 50%, #2b323a 50%, #252a31);
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.datepicker-prev,
-.datepicker-next {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 28px;
-  font: 0/0 a;
-  color: transparent;
-}
-.datepicker-prev:before, .datepicker-prev:after,
-.datepicker-next:before,
-.datepicker-next:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-top: -6px;
-  border: 6px solid transparent;
-}
-.datepicker-prev:before,
-.datepicker-next:before {
-  margin-top: -5px;
-}
-
-.datepicker-prev {
-  left: 0;
-}
-.datepicker-prev:before, .datepicker-prev:after {
-  margin-left: -9px;
-}
-.datepicker-prev:before {
-  border-right-color: rgba(255, 255, 255, 0.1);
-}
-.datepicker-prev:after {
-  border-right-color: #181b21;
-}
-
-.datepicker-next {
-  right: 0;
-}
-.datepicker-next:before, .datepicker-next:after {
-  margin-left: -3px;
-}
-.datepicker-next:before {
-  border-left-color: rgba(255, 255, 255, 0.1);
-}
-.datepicker-next:after {
-  border-left-color: #181b21;
-}
-
-.datepicker-title {
-  display: inline-block;
-  vertical-align: top;
-  line-height: 18px;
-  margin: 4px 0;
-  padding: 0 8px 1px;
-  font-weight: bold;
-  color: #8a99af;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  background: #242930;
-  border: 1px solid;
-  border-color: #151a1f #191c21 #1c2025;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.08);
-}
-
-.datepicker-head {
-  display: block;
-  background: #2a3139;
-  border: 1px solid #1b1e25;
-  border-width: 0 1px;
-}
-
-.datepicker-th {
-  width: 28px;
-  line-height: 24px;
-  padding-bottom: 1px;
-  font-weight: bold;
-  color: #18b165;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid #232833;
-}
-
-.datepicker-body {
-  display: block;
-  background: #404854;
-  border: 1px solid #1b1e25;
-  border-top: 0;
-  border-radius: 0 0 3px 3px;
-}
-
-.datepicker-td {
-  width: 28px;
-  line-height: 26px;
-  padding-bottom: 1px;
-  color: #8ba0b8;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #323841;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-}
-
-.datepicker-td > a {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-.datepicker-td > a:hover {
-  color: #1dd87e;
-}
-.today{
-  width: 28px;
-  line-height: 26px;
-  padding-bottom: 1px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #323841;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-  color: white;
-}
-
-.disabledCells{
-  width: 28px;
-  line-height: 26px;
-  padding-bottom: 1px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #323841;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-  color: gray;
-}
-.datepicker-td.off {
-  color: #677387;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-tr:last-child > .datepicker-td {
-  border-bottom: 0;
-}
-
-input.textfield {
-    width: 60%;
-    height: 35px;
-    font-size: 20px;
-    background-color: #FFF;
-    color: #cbcbcb;
+.panel-header-1 > div {
+    position: relative;
+    width: 100px;
+    height: auto;
+    left: 50%;
+    margin-left: -50px;
     text-align: center;
-	text-indent:15px;
-    border: 1px solid #cbcbcb;
-    margin-left:auto;
-	margin-right:auto;
 }
 
-p {
-  text-align: right;
-  margin-top: 5px !important;
-  margin-bottom : 5px !important;
-  margin-right: 10px ! important;
-  }
-  
- 
-.spinner svg {
-	width: 10% !important;
-	height: 10% !important;
-	stroke: #005C99;
-	fill: #005C99;
+.panel-header-1 > div > img {
+    width: 100px;
+    height: auto;
 }
+
+.title-bar {
+    position: relative;
+    width: 87.5%;
+    padding:20px 0 30px 0;
+    margin: 0 6.25%;
+    box-sizing: border-box;
+    font-family: 'museo500';
+    letter-spacing: 0;
+    font-size:15px;
+    text-align: center;
+    color: #fff;
+}
+
+.title-bar .back{
+    position: absolute;
+    width: auto;
+    font-size:9px;
+    text-align: left;
+    left: 0;
+}
+
+
+.panel-footer {
+    position: fixed;
+    width: 100%;
+    height:auto;
+    padding: 35px 0;
+    display: block;
+    background:#fff;
+    bottom: 0;
+}
+
+h1
+{
+    font-family: 'museo300';
+    display: block;
+    padding: 60px 0 0 0;
+    margin:0;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}
+
+h2{
+    font-family: 'museo300';
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 9px 0 0 0;
+    font-size:17px;
+    color: white;
+}
+
+h3
+{
+    font-family: 'museo300';
+    display: block;
+    padding:0;
+    margin:0;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+h6
+{
+    padding: 0 0 24px 0;
+    margin: 0;
+    border-bottom: 1px solid #61b6e4;
+    width: 240px;
+}
+
+h6 > img {
+    width: 200px;
+    height: 110px;
+}
+
+
+.panel_or{
+    width: 50px;
+    margin: 40px auto 0 auto;
+}
+
+.or_line{
+    width: 8px;
+    height: 1px;
+    background: #61b6e4;
+    text-indent: -9999px;
+    margin:0;
+    float: left;
+}
+
+.form-content{
+    position: relative;
+    width: 240px;
+    height: auto;
+    left: 50%;
+    margin-left: -120px;
+    text-align: center;
+}
+
+.txtfield {
+
+    width: 240px;
+    font-size: 17px;
+    margin-top: 25px;
+    font-family: 'museo300';
+    background: transparent;
+    display: block;
+    text-align: center;
+    color: #fff !important;
+    border-bottom: 1px solid #61b6e4 !important;
+}
+
+.button-big-yellow {
+    position: relative;
+    font-family: 'museo300';
+    display: inline-block;
+    border: none;
+    background: #ffd800 !important;
+    color: #000 !important;
+    min-width: 180px;
+    padding: 0 40px;
+    height: 40px;
+    border-radius: 20px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.button-big-blue {
+    position: relative;
+    font-family: 'museo300';
+    display: inline-block;
+    border: none;
+    background: #048cd4 !important;
+    color: #fff !important;
+    min-width: 180px;
+    padding: 0 40px;
+    height: 40px;
+    border-radius: 20px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+
+.small-txt-light
+{
+    font-family: 'museo300';
+    display: block;
+    padding: 0px 10px;
+    margin:-8px 0 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    float: left;
+}
+
+.panel-my-next-walk{
+    width:100%;
+    height: auto;
+    padding:35px 20px 25px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    float: left;
+
+}
+
+.panel-my-next-walk .title {
+    width: 100%;
+    font-family: 'museo500';
+    text-align: left;
+    font-size: 24px;
+    padding-bottom: 8px;
+    line-height: 24px;
+    float: left;
+}
+
+.panel-my-next-walk > div {
+    width:100%;
+    height: 16px;
+    display: block;
+}
+
+.panel-my-next-walk > div > label {
+    width:auto;
+    height: 16px;
+    line-height: 16px;
+    font-family: 'museo500';
+    font-size: 12px;
+    padding: 0 25px 0 0;
+    float: left;
+}
+
+.panel-my-next-walk > div > label > h1 {
+    width:auto;
+    font-family: 'museo500';
+    font-size: 11px;
+    line-height:17px;
+    height: 16px;
+    text-wrap: none;
+    color: #ffd800;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.icon {
+    width:16px;
+    height: 16px;
+    margin-right: 10px;
+    float: left;
+}
+
+
+.panel-my-next-walk > .image-list {
+    width:100%;
+    height:32px;
+    margin-top:12px;
+    float: left;
+}
+
+.panel-my-next-walk > .image-list > div {
+    width:32px;
+    height:32px;
+    margin-right:8px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.panel-my-next-walk > .image-list > div:nth-last-child(1){
+    font-family: 'museo700';
+    font-size: 11px;
+    color:#000;
+    line-height:32px;
+    text-align: center;
+    background-color:#ffd800 !important;
+}
+
+.panel-invitations{
+    width:100%;
+    padding:30px 20px 0 20px;
+    box-sizing: border-box;
+    display: block;
+    background: #ffd800;
+    color: #000;
+    float: left;
+}
+
+.panel-invitations .title {
+    width: 100%;
+    font-family: 'museo500';
+    text-align: left;
+    font-size: 17px;
+    padding-bottom: 8px;
+    float: left;
+}
+
+.panel-invitations > .walking-list{
+    width:100%;
+    font-family: 'museo500';
+    font-size: 10px;
+    float: left;
+}
+
+.panel-invitations > .walking-list > div {
+    width:auto;
+    float: left;
+}
+
+.panel-invitations > .walking-list > div:nth-child(1) {
+    width:auto;
+    padding: 0 12px 0 0;
+    border-right:1px solid #ffe96c;
+    box-sizing: border-box;
+}
+
+.panel-invitations > .walking-list > div:nth-child(2) {
+    width:auto;
+    padding:0 10px;
+}
+
+.panel-invitations > .walking-list > div:nth-child(3) {
+    width:32px;
+}
+
+.panel-invitations > .walking-list > div > table {
+    width: 104px;
+    height:auto;
+}
+
+.panel-invitations > .walking-list >  div > table tr {
+    width: 104px;
+    height: 44px;
+}
+
+.panel-invitations > .walking-list > div > table tr:last-child {
+    width: 104px;
+    height: 44px;
+}
+
+.panel-invitations > .walking-list > div > table tr td.image {
+    width:24px;
+    height:24px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.panel-invitations > .walking-list > div > table tr td.text {
+    width:72px;
+    height:auto;
+    display: block;
+    margin-left: 8px;
+    text-align: left;
+    float: left;
+}
+
+
+.panel-invitations  h2 {
+    font-family: 'museo700';
+    font-size: 12px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.panel-invitations  h3 {
+    font-family: 'museo500';
+    font-size: 9px;
+    color: #000000;
+    text-align: left;
+    padding: 0;
+    margin: 3px 0 0 0;
+    text-wrap: none;
+}
+
+.panel-invitations > .walking-list  .walk_number {
+    position: relative;
+    width:38px;
+    height:38px;
+    background: url("../img/icon_wall_small_black40.png") no-repeat top left;
+    background-size: cover;
+    float: left;
+}
+
+.panel-invitations > .walking-list  .walk_number p {
+    position: absolute;
+    width:18px;
+    height:18px;
+    font-family: 'museo500';
+    border-radius: 9px;
+    display: block;
+    font-size: 8px;
+    color: #fff;
+    background:#048cd4;
+    line-height: 19px;
+    text-align: center;
+    top:-1px; right:-4px;
+}
+
+.panel-footer-2  {
+    position: fixed;
+    width:100%;
+    padding:30px 20px 15px 20px;
+    box-sizing: border-box;
+    bottom: 0;
+    display: block;
+    background: #fff;
+}
+
+.panel-history {
+     width:100%;
+     padding:0 10px;
+     box-sizing: border-box;
+     display: block;
+     background: #ffd800;
+     border-radius: 9px;
+     margin-top: 20px;
+     float: left;
+ }
+
+.panel-history i{
+    padding: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    margin: 8px 2px 0 2px;
+    background: #048cd4;
+    float: left;
+}
+
+.panel-history div {
+    font-family: 'museo500';
+    color: #000;
+    font-size: 10px;
+    padding: 0 4px 0 8px;
+    float: left;
+}
+
+ion-footer-bar{
+    position: fixed;
+    width: 100%;
+    height: 94px;
+    bottom: 0;
+}
+
+ion-footer-bar .notify-bar {
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    display: block;
+    vertical-align: middle;
+    float: left;
+}
+
+ion-footer-bar .notify-bar h2 {
+    font-family: 'museo500';
+    font-size: 15px;
+    letter-spacing: 0;
+    color: #0c3b53;
+    text-align: center;
+    vertical-align: middle;
+}
+
+ion-footer-bar .notify-bar h2 > img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+ion-footer-bar .button-bar {
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    background: #ffd800;
+    display: block;
+    float: left;
+}
+
+ion-footer-bar .button-bar > a {
+    width: 50%;
+    height: 44px;
+    line-height: 44px;
+    font-family:'museo500';
+    font-size: 13px;
+    color: #000;
+    text-align: center;
+    display: block;
+    border-right:1px solid #e5c200;
+    box-sizing: border-box;
+    float: left;
+}
+
+ion-footer-bar .button-bar > a:last-child {
+    border-right:none
+}
+
+.panel-walking-list{
+    width: 87.5%;
+    height:44px;
+    margin: 0 6.25%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.panel-walking-list > img{
+    width:32px;
+    height:32px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.panel-walking-list > h2{
+    width:auto;
+    line-height: 32px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 0 0 14px;
+    letter-spacing: 0;
+    margin: 0;
+    float: left;
+}
+
+.panel-walking-list > .status {
+    width:auto;
+    height: 20px;
+    margin: 6px 0;
+    display: block;
+    float: right;
+}
+
+.panel-walking-list > .status > span {
+    width:16px;
+    height:20px;
+    margin-right:5px;
+    display: block;
+    float: left;
+}
+
+.panel-walking-list > .status > button{
+    width:90px;
+    height: 20px;
+    line-height: 19px;
+    border-radius: 10px;
+    font-family:'museo500';
+    font-size: 11px;
+    color: #000;
+    background: #ffd800;
+    letter-spacing: 0;
+    border: 0;
+    outline: none;
+    float: left;
+}
+
+.panel-walking-list > .status > button.black{
+    color: #fff;
+    background: #000;
+}
+
+.panel-join-a-walk-list{
+    width: 100%;
+    height:auto;
+    padding:20px 6.25%;
+    box-sizing: border-box;
+    font-family:'museo500';
+    display: block;
+    float: left;
+}
+
+.panel-join-a-walk-list:nth-child(even){
+    background: #fff;
+}
+
+.panel-join-a-walk-list:nth-child(odd){
+    background: #ffd800;
+}
+
+.panel-join-a-walk-list .title {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    padding-bottom: 6px;
+    line-height: 16px;
+    float: left;
+}
+
+.panel-join-a-walk-list > div {
+    width:100%;
+    height: 16px;
+    display: block;
+}
+
+.panel-join-a-walk-list > div > label {
+    width:auto;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    padding: 0 25px 0 0;
+    float: left;
+}
+
+.panel-join-a-walk-list > div > label > h1 {
+    width:auto;
+    font-size: 11px;
+    line-height:17px;
+    height: 16px;
+    text-wrap: none;
+    color:#000;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.icon {
+    width:16px;
+    height: 16px;
+    margin-right: 10px;
+    float: left;
+}
+
+
+.panel-join-a-walk-list > .image-list {
+    width:100%;
+    height:32px;
+    margin-top:6px;
+    opacity: 0.4;
+    float: left;
+}
+
+.panel-join-a-walk-list > .image-list > div {
+    width:32px;
+    height:32px;
+    margin-right:8px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.panel-join-a-walk-list > .image-list > div:nth-last-child(1){
+    font-family: 'museo700';
+    font-size: 11px;
+    color:#000;
+    line-height:32px;
+    text-align: center;
+    background-color:#fff !important;
+}
+
+.panel-join-a-walk-list > .status{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    float: left;
+}
+
+.panel-join-a-walk-list > .status > button{
+    width:60px;
+    height: 20px;
+    line-height: 19px;
+    border-radius: 10px;
+    font-family:'museo500';
+    font-size: 10px;
+    letter-spacing: 0;
+    border: 0;
+    outline: none;
+    margin-right: 10px;
+    float: left;
+}
+
+.panel-join-a-walk-list > .status > button:nth-child(1){
+    color: #fff;
+    background: #048cd4;
+}
+.panel-join-a-walk-list > .status > button:nth-child(2){
+    color: #000;
+    background: #fff;
+}
+
+.panel-join-a-walk-list > .status > button:nth-last-child(1){
+    color: #fff;
+    background: #000;
+    margin: 0;
+}
+
+
+.panel-single-row-full{
+    width: 100%;
+    height:auto;
+    display: block;
+    float: left;
+}
+
+.panel-single-row{
+    width: 87.5%;
+    height:auto;
+    padding-top: 35px;
+    margin:0 6.25% 6px 6.25%;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+}
+
+.panel-history-list{
+    width: 87.5%;
+    height:43px;
+    margin:0 6.25%;
+    border-bottom:1px solid #61b6e4;
+    box-sizing: border-box;
+    font-family:'museo500';
+    float: left;
+}
+
+.panel-history-list > label{
+    width:50%;
+    height: 16px;
+    line-height: 43px;
+    font-size: 15px;
+    color: #fff;
+    float: left;
+}
+
+.panel-history-list > label span{
+    color: #ffd800;
+}
+
+.panel-history-list > h1{
+    width:66px;
+    height: 16px;
+    line-height: 16px;
+    background: url("../img/icon_clock_36.png") no-repeat left;
+    background-size:12px;
+    font-size: 10px;
+    text-indent: 16px;
+    margin-top: 13px;
+    padding: 0 5px;
+    float: left;
+}
+
+.panel-history-list > button{
+    width:60px;
+    height: 20px;
+    line-height: 15px;
+    border-radius: 10px;
+    font-family:'museo500';
+    font-size: 10px;
+    letter-spacing: 0;
+    margin-top: 11px;
+    border: 0;
+    outline: none;
+    float: right;
+}
+
+.panel-history-list > button.created{
+    color: #000;
+    background: #ffd800;
+}
+.panel-history-list > button.joined{
+    color: #000;
+    background: #fff;
+}
+
+.panel-history-list > button.ns{
+    color: #fff;
+    background: #000;
+    text-transform: uppercase;
+}
+
+.font11 {
+    font-size: 11px;
+    font-family:'museo500';
+    color: #ffd800;
+    display: block;
+    text-align: left;
+}
+
+/*Basic Styles*/
+
+.blue-bg{background:#048cd4;}
+.yellow-bg{background:#ffd800;}
+.black-bg{background:#000;}
+.white-bg{background:#fff;}
+
+.blue-color{color:#048cd4;}
+.yellow-color{color:#ffd800;}
+.black-color{color:#000;}
+.white-color{color:#fff;}
+
+.paddingTop80{padding-top: 80px;}
+.paddingTop50{padding-top: 50px;}
+.paddingTop40{padding-top: 40px;}
+.paddingTop30{padding-top: 30px;}
+.paddingTop0{padding-top: 0 !important;}
+
+.marginTop6{margin-top: 6px !important;}
+.marginTop12{margin-top: 12px !important;}
+.marginTop18{margin-top: 18px !important;}
+.marginTop24{margin-top: 24px !important;}
+.marginTop30{margin-top: 30px !important;}
+.marginTop40{margin-top: 40px !important;}
+
+.w100{width:100%;}
+.w75{width:75%;}
+.w50{width:50%;}
+.w25{width:25%;}
+
+.show{display: block;}
+.hide{display: none;}
+
+.center-align {text-align: center;}
+
+.clear-fix{clear: both;}
