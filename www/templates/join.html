@@ -1,25 +1,93 @@
-<ion-pane>
-	<ion-header-bar class="bar bar-header bar-calm">
-		<h1 class="title" style="text-center">Walk With Me</h1>
-	</ion-header-bar>
-	<ion-content>
-		<div class="list list-inset">
-		  <!-- Duplicate this -->
-		  <label class="item item-input">My Next Walk</label>
-		  <label class="item item-input">Sat 25, Jul 205</label>
-		  <label class="item item-input">5.00 PM</label>
-		  <label class="item item-input">Walking with me</label>
-		  
-		  <div class="item item-avatar">
-    		<img src="img/sampleAvatar.jpg">    		    		
-  		  </div>
-  		  <div class="item item-avatar">
-    		<img src="img/sampleAvatar.jpg">    		    		
-  		  </div>
-			<button class="button icon-left ion-star button-positive" >Accept</button>
-			<button class="button icon-left ion-star button-positive" >Maybe</button>
-			<button class="button icon-left ion-star button-positive" >Decline</button>
+<ion-pane on-swipe-right="onSwipeRight()">
+
+	<ion-header-bar class="panel-header-1 marginTop40">
+		<div>
+			<img src="img/logo_header.png"/>
 		</div>
-		
+	</ion-header-bar>
+
+	<ion-content>
+		<div class="title-bar">
+			<div class="back">Back</div>
+			Join a Walk
+		</div>
+
+		<div class="panel-join-a-walk-list">
+			<label class="title">Walk with Jerry</label>
+			<div>
+				<label>
+					<span class="icon"><img src="img/icon_calendar_48_blue.png"/></span>
+					<h1>Sat 25, Jul 2015</h1>
+				</label>
+				<label>
+					<span class="icon"><img src="img/icon_clock_48_blue.png"/></span>
+					<h1>5.00 PM</h1>
+				</label>
+			</div>
+		</div>
+
+		<div class="panel-join-a-walk-list">
+			<label class="title">Walk with Natalie</label>
+			<div>
+				<label>
+					<span class="icon"><img src="img/icon_calendar_48_blue.png"/></span>
+					<h1>Sat 25, Jul 2015</h1>
+				</label>
+				<label>
+					<span class="icon"><img src="img/icon_clock_48_blue.png"/></span>
+					<h1>5.00 PM</h1>
+				</label>
+			</div>
+
+			<div class="panel-single-row-full marginTop18">
+				<label>People Walking with me</label>
+			</div>
+
+			<div class="image-list">
+				<div><img src="img/img_people1.png"></div>
+				<div><img src="img/img_people4.png"></div>
+				<div><img src="img/img_people5.png"></div>
+				<div><img src="img/img_people2.png"></div>
+				<div><img src="img/img_people6.png"></div>
+				<div>12+</div>
+			</div>
+
+			<div class="status">
+				<button>Accept</button>
+				<button class="white">May be</button>
+				<button class="black">Decline</button>
+			</div>
+
+		</div>
+
+		<div class="panel-join-a-walk-list">
+			<label class="title">Walk with Susan</label>
+			<div>
+				<label>
+					<span class="icon"><img src="img/icon_calendar_48_blue.png"/></span>
+					<h1>Sat 25, Jul 2015</h1>
+				</label>
+				<label>
+					<span class="icon"><img src="img/icon_clock_48_blue.png"/></span>
+					<h1>5.00 PM</h1>
+				</label>
+			</div>
+		</div>
+		<div class="panel-join-a-walk-list">
+			<label class="title">Walk with Jerome</label>
+			<div>
+				<label>
+					<span class="icon"><img src="img/icon_calendar_48_blue.png"/></span>
+					<h1>Sat 25, Jul 2015</h1>
+				</label>
+				<label>
+					<span class="icon"><img src="img/icon_clock_48_blue.png"/></span>
+					<h1>5.00 PM</h1>
+				</label>
+			</div>
+		</div>
+
+
 	</ion-content>
+
 </ion-pane>

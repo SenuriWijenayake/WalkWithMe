@@ -1,21 +1,20 @@
 <ion-pane>
-	<ion-header-bar class="bar bar-header bar-calm">
-		<h1 class="title" style="text-center">Walk With Me</h1>
+	<ion-header-bar class="panel-header-1">
+		<div>
+			<img src="img/logo_header.png"/>
+		</div>
 	</ion-header-bar>
 	<ion-content>
-		<div class="list list-inset">
-			<h2>Mobile number</h2>
-		  <label class="item item-input">		  	
-		    <input type="text" placeholder="Eg: +94772225588" ng-model="registrationData.mobileNo">
-		  </label>
-		  <h2>Your name</h2>
-		  <label class="item item-input">		  	
-		    <input type="text" placeholder="Eg: Amanda Cove" ng-model="registrationData.nickName">
-		  </label>
-		  <button class="button button-block button-positive center" ng-click="sendCode()">
-  			SMS Code
-		</button>	
+		<div class="form-content">
+			<h3 class="paddingTop80">Mobile Number</h3>
+			<label>
+				<input type="text" placeholder="Eg: +94772225588" ng-model="registrationData.mobileNo" class="txtfield">
+			</label>
+			<h3 class="paddingTop50">Nick Name</h3>
+			<label>
+				<input type="text" placeholder="Eg: Amanda Cove" ng-model="registrationData.nickName" class="txtfield">
+			</label>
+			<button class="button-big-yellow marginTop40" ng-click="sendCode()">SMS Code</button>
 		</div>
-			
 	</ion-content>
 </ion-pane>

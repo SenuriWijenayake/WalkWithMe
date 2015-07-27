@@ -1,30 +1,88 @@
 <ion-pane on-swipe-right="onSwipeRight()">
-	<ion-header-bar class="bar bar-header bar-calm">
-		<h1 class="title" style="text-center">My Walking history</h1>
+
+	<ion-header-bar class="panel-header-1 marginTop40">
+		<div>
+			<img src="img/logo_header.png"/>
+		</div>
 	</ion-header-bar>
+
 	<ion-content>
-		 <div class="item item-avatar">
-    		<img src="img/sampleAvatar.jpg">
-    		<h2>Leo Mueller</h2>
-    		<button class="button button-energized">
-  				Walking
-			</button>
-		  </div>
-		<div class="item item-avatar">
-    		<img src="img/sampleAvatar.jpg">
-    		<h2>Leo Mueller</h2>
-    		<button class="button button-energized">
-  				Not walking
-			</button>
-		  </div>		
+		<div class="title-bar">
+			<div class="back">Back</div>
+			Walking Now
+		</div>
+
+		<div class="panel-walking-list">
+			<img src="img/img_people1.png">
+			<h2>Grant Mueller</h2>
+			<div class="status">
+				<span><img src="img/icon_walkie_16.png"/></span>
+				<button>Walking</button>
+			</div>
+		</div>
+
+		<div class="panel-walking-list">
+			<img src="img/img_people3.png">
+			<h2>Grace Walter</h2>
+			<div class="status">
+				<span><img src="img/icon_walkie_16.png"/></span>
+				<button>Walking</button>
+			</div>
+		</div>
+
+		<div class="panel-walking-list">
+			<img src="img/img_people2.png">
+			<h2>Don Casey</h2>
+			<div class="status">
+				<button class="black">Not Walking</button>
+			</div>
+		</div>
+
+		<div class="panel-walking-list">
+			<img src="img/img_no_image_yellow.png">
+			<h2>Anna Johnson</h2>
+			<div class="status">
+				<span><img src="img/icon_walkie_16.png"/></span>
+				<button>Walking</button>
+			</div>
+		</div>
+
+		<div class="panel-walking-list">
+			<img src="img/img_people6.png">
+			<h2>Amy Patrick</h2>
+			<div class="status">
+				<span><img src="img/icon_walkie_16.png"/></span>
+				<button>Walking</button>
+			</div>
+		</div>
+
+		<div class="panel-walking-list">
+			<img src="img/img_people5.png">
+			<h2>Jaime Robertson</h2>
+			<div class="status">
+				<button class="black">Not Walking</button>
+			</div>
+		</div>
+
+		<div class="panel-walking-list">
+			<img src="img/img_people4.png">
+			<h2>Julia Mckinson</h2>
+			<div class="status">
+				<span><img src="img/icon_walkie_16.png"/></span>
+				<button>Walking</button>
+			</div>
+		</div>
+
 	</ion-content>
+
 	<ion-footer-bar>
-		<div class="item">
-			<h2>Amy send a walkie to Dana</h2>
-		</div>		
+		<div class="notify-bar">
+			<h2>Amy send a walkie <img src="img/icon_walkie_30.png"/> to Dana</h2>
+		</div>
 		<div class="button-bar">
-		  <a class="button">Send walkies</a>
-		  <a class="button">Send picture</a>		  
+			<a>Send Walkies</a>
+			<a>Send Picture</a>
 		</div>
 	</ion-footer-bar>
+
 </ion-pane>
