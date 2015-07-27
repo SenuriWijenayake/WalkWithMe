@@ -118,7 +118,7 @@ angular.module('WalkWithMeApp.controllers', [])
 
     "nextWalk": {
 
-            "Date": "Sat 25, July 2015",
+        "Date": "Sat 25, July 2015",
 
         "Time": "5.00 pm",
     
@@ -138,21 +138,21 @@ angular.module('WalkWithMeApp.controllers', [])
 
     "walkHistory": [
     
-        {"Month" : "July" , "Count" : 4},
+        {"Month" : "July" , "countWalks" : 4 },
 
-            {"Month" : "June" , "Count" : 3},
+        {"Month" : "June" , "countWalks" : 3 },
    
-        {"Month" : "May" , "Count" : 2}
+        {"Month" : "May" , "countWalks" : 2}
  
         ]
 
 
 };
 
-    // My Next Walk
+// My Next Walk
     
-    $scope.date = data.nextWalk.Date;
-    $scope.walkTime = data.nextWalk.Time;
+$scope.date = data.nextWalk.Date;
+$scope.walkTime = data.nextWalk.Time;
 $scope.walkParticipants = data.nextWalk.Participants;
 
 
@@ -164,15 +164,12 @@ $scope.inviteWalk = data.invitations;
 // History
 
 $scope.historyWalk = data.walkHistory;
-//$scope.historyCount = data.walkHistory.Count;
 
+$scope.range = function(n){
+    return new Array(n);
+};
 
-
-
-
-  
-}
-)
+})
 
 
 .controller('WalkCtrl', function($scope,$ionicLoading, $state) {

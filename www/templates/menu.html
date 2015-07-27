@@ -30,44 +30,37 @@
   		  </div>
 
 		</div>
-		<div class="list list-inset" ng-show = "!data.invitations">
+		<div class="list list-inset"  >
 		  <h2>Walking Invitations</h2>
 
-		  <div class="item item-avatar" data-ng-repeat="invites in inviteWalk">
+		  <div class="item item-avatar" data-ng-repeat="invites in inviteWalk" ng-show = "!data.invitations">
     		<img src="img/sampleAvatar.jpg">    		    		
     		<h2> with {{invites.Inviter}} <h2>
     		
     		<p>{{invites.DateInvite}}<br/> {{invites.Time}}</p>
     		<p>{{invites.Pariticipants.length}} of your friends are walking with him</p> <div ng-hide = "true"> {{invites.Pariticipants}}
   		  </div>
-</div>
+		</div>
 		
-  		   <a class="button icon-right ion-chevron-right" ui-sref="join">Join</a>
+  		   <a class="button icon-right ion-chevron-right" ui-sref="join" ng-show = "!data.invitations">Join</a>
   		   <button class="button icon-left ion-star button-positive" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
 		</div>
 
 		<div class="item" ng-show = "!data.walkHistory">History
 
-		 <i class ng-repeat="history in historyWalk">
+		<label ng-repeat="history in historyWalk track by $index">
 		
 			{{history.Month}}
-			<i data-ng-repeat="hist in history">
-			{{hist.Count}}
-		<i class ="icon ion-ionic" > 
 
-
-
-		</i>
-
+			<label data-ng-repeat="walkCount in range(history.countWalks) track by $index"> 
+			<i class ="icon ion-ionic">
+			</i>
 			
-
+		</label>
 		
-			
-			</i>
-			</i>
-			<a ui-sref="history">More</a>
-			
+		<a ui-sref="history">More</a>
 		</div>
+		</label>
 	</ion-content>
 </ion-pane>
 </div>
