@@ -1,4 +1,4 @@
-
+<!-- 
 <div data-ng-controller = "MenuCtrl"
 <ion-pane on-swipe-right="onSwipeRight()">
 	<ion-header-bar class="bar bar-header bar-calm">
@@ -10,7 +10,7 @@
 		<div class="list list-inset" ng-show = "!data.nextWalk"> 
 
 		
-		  <!-- bind the next walk object -->
+		  
 		  <label class="item item-input">My Next Walk</label>
 		  <label class="item item-input">{{date}}</label>
 		  <label class="item item-input">{{walkTime}}</label>
@@ -63,4 +63,181 @@
 		</label>
 	</ion-content>
 </ion-pane>
-</div>
+</div> -->
+
+<!--
+<ion-pane on-swipe-right="onSwipeRight()">
+	<ion-header-bar class="bar bar-header bar-calm">
+		<h1 class="title" style="text-center">Walk With Me</h1>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list list-inset">
+		  &lt;!&ndash; bind the next walk object &ndash;&gt;
+		  <label class="item item-input">My Next Walk</label>
+		  <label class="item item-input">Sat 25, Jul 205</label>
+		  <label class="item item-input">5.00 PM</label>
+		  <label class="item item-input">Walking with me</label>
+		  <div class="item item-avatar">
+    		<img src="img/sampleAvatar.jpg">    		    		
+  		  </div>
+  		  <div class="item item-avatar">
+    		<img src="img/sampleAvatar.jpg">    		    		
+  		  </div>
+
+		</div>
+		<div class="list list-inset">
+		  <h2>Walking Invitations</h2>
+
+		  <div class="item item-avatar">
+    		<img src="img/sampleAvatar.jpg">    		    		
+    		<h2> with Jerry <h2>
+    		<p>Wed 22, Jul 2015 <br/> 5.00 AM</p>
+    		<p>5 of your friends are walking with him</p>
+  		  </div>
+
+		<div class="item item-avatar">
+    		<img src="img/sampleAvatar.jpg">    		    		
+    		<h2> with Jerry <h2>
+    		<p>Wed 22, Jul 2015 <br/> 5.00 AM</p>
+    		<p>5 of your friends are walking with him</p>
+  		  </div>
+
+  		   <a class="button icon-right ion-chevron-right" ui-sref="join">Join</a>
+  		   <button class="button icon-left ion-star button-positive" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
+		</div>
+
+		<div class="item">
+			History Jul
+			<i class="icon ion-ionic"></i>
+			<i class="icon ion-ionic"></i>
+			<i class="icon ion-ionic"></i>
+			<i class="icon ion-ionic"></i>
+			Mar
+			<i class="icon ion-ionic"></i>
+			<i class="icon ion-ionic"></i>
+			<i class="icon ion-ionic"></i>
+			Apr
+			<i class="icon ion-ionic"></i>
+			<i class="icon ion-ionic"></i>						
+			<a ui-sref="history">More</a>
+		</div>
+	</ion-content>
+</ion-pane>-->
+
+
+<ion-pane  on-swipe-right="onSwipeRight()">
+	<ion-header-bar class="panel-header-1 marginTop40">
+		<div>
+			<img src="img/logo_header.png"/>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="panel-my-next-walk">
+			<!-- bind the next walk object -->
+
+			<label class="title">My Next Walk</label>
+
+			<div>
+				<label>
+					<span class="icon"><img src="img/icon_calendar_48.png"/></span>
+					<h1>Sat 25, Jul 2015</h1>
+				</label>
+				<label>
+					<span class="icon"><img src="img/icon_clock_48.png"/></span>
+					<h1>5.00 PM</h1>
+				</label>
+			</div>
+
+			<div class="panel-single-row-full marginTop30">
+				<label>Walking with me</label>
+			</div>
+
+			<div class="image-list">
+				<div><img src="img/img_people1.png"></div>
+				<div><img src="img/img_people4.png"></div>
+				<div><img src="img/img_no_image_yellow.png"></div>
+				<div><img src="img/img_people5.png"></div>
+				<div><img src="img/img_people2.png"></div>
+				<div><img src="img/img_people6.png"></div>
+				<div>12+</div>
+			</div>
+		</div>
+		<!--Closing Panel My Next Walk-->
+
+		<div class="panel-invitations">
+			<!-- bind the next walk object -->
+			<label class="title">Walking Invitations</label>
+
+			<div class="walking-list">
+				<div>
+					<table>
+						<tr>
+							<td class="image"><img src="img/img_people1.png"></td>
+							<td class="text">
+								<h2> with Jerry<h2>
+									<h3>Wed 22, Jul 2015 <br/> 5.00 AM</h3>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="image"><img src="img/icon_wall_small_white.png"></td>
+							<td class="text">
+								<h3 class="marginTop6">5 friends walk with him</h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div>
+					<table>
+						<tr>
+							<td class="image"><img src="img/img_people3.png"></td>
+							<td class="text">
+								<h2> with Maria<h2>
+									<h3>Sat 25, Jul 2015 <br/> 6.00 PM</h3>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="image"><img src="img/icon_wall_small_white.png"></td>
+							<td class="text">
+								<h3 class="marginTop6">13 friends walk with her</h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div>
+					<div class="walk_number">
+						<img src="img/icon_wall_small_black40.png">
+						<p>05</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Closing Walking Invitation-->
+
+		<div class="panel-footer-2">
+			<!-- bind the next walk object -->
+			<div class="form-content">
+				<button class="button-big-blue" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
+			</div>
+
+			<div class="panel-history">
+				<div>History</div>
+				<div> Jul</div>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+				<div> Mar</div>
+				<i></i>
+				<i></i>
+				<i></i>
+				<div> Apr</div>
+				<i></i>
+				<i></i>
+				<div><a ui-sref="history">More</a></div>
+			</div>
+	</ion-content>
+</ion-pane>
