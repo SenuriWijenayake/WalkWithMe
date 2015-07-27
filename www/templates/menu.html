@@ -123,8 +123,6 @@
 		</div>
 	</ion-content>
 </ion-pane>-->
-
-
 <ion-pane  on-swipe-right="onSwipeRight()">
 	<ion-header-bar class="panel-header-1 marginTop40">
 		<div>
@@ -132,7 +130,7 @@
 		</div>
 	</ion-header-bar>
 	<ion-content>
-		<div class="panel-my-next-walk">
+		<div class="panel-my-next-walk" ng-show = "!data.nextWalk">
 			<!-- bind the next walk object -->
 
 			<label class="title">My Next Walk</label>
@@ -140,11 +138,11 @@
 			<div>
 				<label>
 					<span class="icon"><img src="img/icon_calendar_48.png"/></span>
-					<h1>Sat 25, Jul 2015</h1>
+					<h1>{{date}}</h1>
 				</label>
 				<label>
 					<span class="icon"><img src="img/icon_clock_48.png"/></span>
-					<h1>5.00 PM</h1>
+					<h1>{{walkTime}}</h1>
 				</label>
 			</div>
 
@@ -152,13 +150,12 @@
 				<label>Walking with me</label>
 			</div>
 
-			<div class="image-list">
-				<div><img src="img/img_people1.png"></div>
-				<div><img src="img/img_people4.png"></div>
-				<div><img src="img/img_no_image_yellow.png"></div>
-				<div><img src="img/img_people5.png"></div>
-				<div><img src="img/img_people2.png"></div>
-				<div><img src="img/img_people6.png"></div>
+			<!-- TODO logic -->
+			<div class="image-list">				
+				<div data-ng-repeat="participant in walkParticipants">
+		  			<img src="img/img_people{{participant}}.png">
+		  		</div>				
+				<div><img src="img/img_no_image_yellow.png"></div>				
 				<div>12+</div>
 			</div>
 		</div>
@@ -208,7 +205,7 @@
 				</div>
 
 				<div>
-					<div class="walk_number">
+					<div class="walk_number" ui-sref="walkNow">
 						<img src="img/icon_wall_small_black40.png">
 						<p>05</p>
 					</div>

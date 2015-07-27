@@ -113,56 +113,54 @@ angular.module('WalkWithMeApp.controllers', [])
 
 .controller('MenuCtrl', function($scope,$ionicLoading, $state) {
 
-   var data = {
-  
+    var data = {
 
-    "nextWalk": {
 
-        "Date": "Sat 25, July 2015",
+        "nextWalk": {
+            "Date": "Sat 25, July 2015",
+            "Time": "5.00 pm",
+            "Participants": [1, 4, 3, 5, 2, 6]
+        },
+        "invitations": [
 
-        "Time": "5.00 pm",
-    
-        "Participants": ["Senuri, ","Mandy, ","Kasuni"]
+            {
+                "Inviter": "Jerry",
+                "DateInvite": "Wed 22, July 2015",
+                "Time": "5.00 am",
+                "Pariticipants": ["Senuri", "Mandy", "Kasuni"]
+            }, {
+                "Inviter": "Tom",
+                "DateInvite": "Monday 20, July 2015",
+                "Time": "5.30 am",
+                "Pariticipants": ["Senuri", "Tim", "Tic"]
+            }
 
-       
-  },
- 
-
-    "invitations": [
-    
-        {"Inviter" : "Jerry" , "DateInvite" : "Wed 22, July 2015" , "Time" : "5.00 am", "Pariticipants" : ["Senuri","Mandy","Kasuni"]},
-        {"Inviter" : "Tom" , "DateInvite" : "Monday 20, July 2015" , "Time" : "5.30 am", "Pariticipants" : ["Senuri","Tim","Tic"]}
-  
         ],
- 
-
-    "walkHistory": [
-    
-        {"Month" : "July" , "countWalks" : 4 },
-
-        {"Month" : "June" , "countWalks" : 3 },
-   
-        {"Month" : "May" , "countWalks" : 2}
- 
+        "walkHistory": [
+            {
+                "Month": "July",
+                "countWalks": 4
+            },
+            {
+                "Month": "June",
+                "countWalks": 3
+            },
+            {
+                "Month": "May",
+                "countWalks": 2
+            }
         ]
+    };
 
-
-};
-
-// My Next Walk
-    
+// My Next Walk    
 $scope.date = data.nextWalk.Date;
 $scope.walkTime = data.nextWalk.Time;
 $scope.walkParticipants = data.nextWalk.Participants;
 
-
-
 // Walking Invitations
-
 $scope.inviteWalk = data.invitations;
 
 // History
-
 $scope.historyWalk = data.walkHistory;
 
 $scope.range = function(n){
