@@ -40,8 +40,6 @@ html,body{height:100%; width: 100%;}
 body{
     padding: 0;
     margin: 0;
-    background:#048cd4 url("../img/bg_main.png") no-repeat left;
-    background-size: contain;
 }
 
 ::-webkit-input-placeholder {
@@ -60,6 +58,33 @@ body{
 img, p, div, a, h1, h2, h3, h4, h5, h6 {padding: 0; margin: 0; outline: 0; border: 0;}
 img {width:100%;}
 
+/*--------------------Iconic Class ----------------------*/
+
+.pane, .view {
+    background:#048cd4 url("../img/bg_main.png") no-repeat left;
+    background-size: contain;
+}
+
+.bar {
+    border-top: none !important;
+    border-bottom: none !important;
+    background-color: transparent !important;
+    padding: 0;
+}
+
+ion-header-bar
+{border:none !important;}
+
+@media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .bar {
+        border: none;
+        background-image: none;
+      }
+
+}
+
+/*-------------------------------------------------------*/
+
 .ion-pane, .ion-content {height:100% !important;}
 
 .panel-loading {
@@ -75,6 +100,7 @@ img {width:100%;}
     height: auto;
     margin-top: 50px;
     display: block;
+    border:none !important;
 }
 
 .panel-header-1 > div {
@@ -94,7 +120,7 @@ img {width:100%;}
 .title-bar {
     position: relative;
     width: 87.5%;
-    padding:20px 0 30px 0;
+    padding:70px 0 30px 0;
     margin: 0 6.25%;
     box-sizing: border-box;
     font-family: 'museo500';
@@ -107,7 +133,7 @@ img {width:100%;}
 .title-bar .back{
     position: absolute;
     width: auto;
-    font-size:9px;
+    font-size:11px;
     text-align: left;
     left: 0;
 }
@@ -127,7 +153,7 @@ h1
 {
     font-family: 'museo300';
     display: block;
-    padding: 60px 0 0 0;
+    padding: 110px 0 0 0;
     margin:0;
     text-align: center;
     font-size: 22px;
@@ -505,14 +531,14 @@ h6 > img {
     float: left;
 }
 
-ion-footer-bar{
+.panel-footer-walk-now{
     position: fixed;
     width: 100%;
     height: 94px;
     bottom: 0;
 }
 
-ion-footer-bar .notify-bar {
+.panel-footer-walk-now .notify-bar {
     width: 100%;
     height: 30px;
     margin: 10px 0;
@@ -521,7 +547,7 @@ ion-footer-bar .notify-bar {
     float: left;
 }
 
-ion-footer-bar .notify-bar h2 {
+.panel-footer-walk-now .notify-bar h2 {
     font-family: 'museo500';
     font-size: 15px;
     letter-spacing: 0;
@@ -530,12 +556,12 @@ ion-footer-bar .notify-bar h2 {
     vertical-align: middle;
 }
 
-ion-footer-bar .notify-bar h2 > img {
+.panel-footer-walk-now .notify-bar h2 > img {
     width: 30px;
     vertical-align: middle;
 }
 
-ion-footer-bar .button-bar {
+.panel-footer-walk-now .button-bar {
     width: 100%;
     height: 44px;
     margin: 0;
@@ -545,7 +571,7 @@ ion-footer-bar .button-bar {
     float: left;
 }
 
-ion-footer-bar .button-bar > a {
+.panel-footer-walk-now .button-bar > a {
     width: 50%;
     height: 44px;
     line-height: 44px;
@@ -559,7 +585,7 @@ ion-footer-bar .button-bar > a {
     float: left;
 }
 
-ion-footer-bar .button-bar > a:last-child {
+.panel-footer-walk-now .button-bar > a:last-child {
     border-right:none
 }
 
@@ -581,12 +607,14 @@ ion-footer-bar .button-bar > a:last-child {
 }
 
 .panel-walking-list > h2{
-    width:auto;
+    width:130px;
     line-height: 32px;
     font-size: 14px;
     color: #fff;
     padding: 0 0 0 14px;
     letter-spacing: 0;
+    text-align: left;
+    text-overflow: ellipsis;
     margin: 0;
     float: left;
 }
@@ -855,6 +883,7 @@ ion-footer-bar .button-bar > a:last-child {
 .black-color{color:#000;}
 .white-color{color:#fff;}
 
+.paddingTop130{padding-top: 130px;}
 .paddingTop80{padding-top: 80px;}
 .paddingTop50{padding-top: 50px;}
 .paddingTop40{padding-top: 40px;}
