@@ -284,7 +284,7 @@ h6 > img {
 .panel-my-next-walk{
     width:100%;
     height: auto;
-    padding:35px 20px 25px 20px;
+    padding:75px 20px 25px 20px;
     box-sizing: border-box;
     color: #fff;
     display: block;
@@ -314,19 +314,20 @@ h6 > img {
     line-height: 16px;
     font-family: 'museo500';
     font-size: 12px;
-    padding: 0 25px 0 0;
+    padding: 0;
+    margin-right: 25px;
     float: left;
 }
 
 .panel-my-next-walk > div > label > h1 {
-    width:auto;
+    width:88px;
     font-family: 'museo500';
     font-size: 11px;
     line-height:17px;
     height: 16px;
     text-wrap: none;
     color: #ffd800;
-    margin: 0;
+    text-align: left;
     padding: 0;
     float: left;
 }
@@ -364,6 +365,7 @@ h6 > img {
     text-align: center;
     background-color:#ffd800 !important;
 }
+
 
 .panel-invitations{
     width:100%;
@@ -424,7 +426,7 @@ h6 > img {
 
 .panel-invitations > .walking-list > div > table tr:last-child {
     width: 104px;
-    height: 44px;
+    height: 60px;
 }
 
 .panel-invitations > .walking-list > div > table tr td.image {
@@ -529,6 +531,12 @@ h6 > img {
     font-size: 10px;
     padding: 0 4px 0 8px;
     float: left;
+}
+
+
+.panel-history div > a{
+    text-decoration: none;
+    color: #000;
 }
 
 .panel-footer-walk-now{
