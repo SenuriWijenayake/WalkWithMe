@@ -67,7 +67,6 @@ angular.module('WalkWithMeApp', ['ionic', 'WalkWithMeApp.controllers', 'WalkWith
             controller: 'WalkCtrl'
         })
 
-
         .state('join', {
             url: "/join",
             templateUrl: "templates/join.html",
@@ -84,5 +83,11 @@ angular.module('WalkWithMeApp', ['ionic', 'WalkWithMeApp.controllers', 'WalkWith
             url: "/motivation",
             templateUrl: "templates/motivation.html",
             controller: 'MotivationCtrl'
+        })
+
+        .state('invite', {
+            url: "/invite",
+            templateUrl: "templates/invite.html",
+            controller: 'RegisterCtrl'
         })
 });
