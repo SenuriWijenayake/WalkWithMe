@@ -1,18 +1,68 @@
 <ion-pane>
-	<ion-header-bar class="bar bar-header bar-calm">
-		<h1 class="title" style="text-center">Walk With Me</h1>
+	<ion-header-bar class="panel-header-1 marginTop40">
+		<div class="logo">
+			<img src="img/logo_header.png"/>
+		</div>
+
+		<div class="title-bar">
+			<div class="back">Back</div>
+			Create New Walk
+		</div>
 	</ion-header-bar>
+
 	<ion-content>
-		<div class="list list-inset">
-			<h2>Create new walk</h2>
-		  <label class="item item-input">Calender</label>		  		  
-		  <label class="item item-input">Time 5 : 22 AM</label>		  		  
-		</div>		
-		<!-- show if there is a error -->
-		<div class="list list-inset">			
-			<button class="button button-block button-positive center">
-  				Invite friends
-			</button>		  
-		</div>		
+		<div class="panel-create-walk">
+				<h1>27 <span class="yellow-color">Jul</span> 15</h1>
+		</div>
+
+		<div class="panel-week-selector">
+			<div>
+				<div><a href="#">Prev</a></div>
+				<div>July 2015</div>
+				<div><a href="#">Next</a></div>
+			</div>
+		</div>
+
+		<div class="panel-week">
+			<div>Su</div>
+			<div>Mo</div>
+			<div>Tu</div>
+			<div>We</div>
+			<div>Th</div>
+			<div>Fr</div>
+			<div>Sa</div>
+		</div>
+
+		<div class="panel-days">
+			<div>26</div>
+			<div>27</div>
+			<div><span class="today">28</span></div>
+			<div>29</div>
+			<div>30</div>
+			<div><span class="selected">31</span></div>
+			<div>01</div>
+		</div>
+
 	</ion-content>
+
+	<ion-footer-bar>
+
+		<div class="panel-create-new-footer">
+			<div class="panel-time">
+				<div>
+					<div>05</div>
+					<div>:</div>
+					<div>15</div>
+					<div>AM</div>
+				</div>
+			</div>
+			<div class="form-content">
+				<button class="button-big-yellow">Invite friends</button>
+			</div>
+		</div>
+	</ion-footer-bar>
+
 </ion-pane>
+
+
+

@@ -80,9 +80,27 @@ ion-header-bar
         border: none;
         background-image: none;
       }
-
 }
 
+.has-header {
+    top: 160px;
+}
+
+.has-header.main-header-space {
+    top: 115px !important;
+}
+
+.has-footer {
+    bottom: 44px;
+}
+
+.has-footer.walking-footer-space {
+    bottom: 105px;
+}
+
+.has-footer.create-walk-footer-space {
+    bottom: 90px;
+}
 /*-------------------------------------------------------*/
 
 .ion-pane, .ion-content {height:100% !important;}
@@ -103,7 +121,7 @@ ion-header-bar
     border:none !important;
 }
 
-.panel-header-1 > div {
+.panel-header-1 > div.logo {
     position: relative;
     width: 100px;
     height: auto;
@@ -119,13 +137,12 @@ ion-header-bar
 
 .title-bar {
     position: relative;
-    width: 87.5%;
-    padding:70px 0 30px 0;
-    margin: 0 6.25%;
+    width: 100%;
+    padding:20px 20px 35px 20px;
     box-sizing: border-box;
     font-family: 'museo500';
     letter-spacing: 0;
-    font-size:15px;
+    font-size:17px;
     text-align: center;
     color: #fff;
 }
@@ -133,11 +150,10 @@ ion-header-bar
 .title-bar .back{
     position: absolute;
     width: auto;
-    font-size:11px;
+    font-size:13px;
     text-align: left;
-    left: 0;
+    left: 20px;
 }
-
 
 .panel-footer {
     position: fixed;
@@ -153,7 +169,7 @@ h1
 {
     font-family: 'museo300';
     display: block;
-    padding: 110px 0 0 0;
+    padding: 0;
     margin:0;
     text-align: center;
     font-size: 22px;
@@ -282,14 +298,14 @@ h6 > img {
 }
 
 .panel-my-next-walk{
-    width:100%;
+    width:87.5%;
     height: auto;
-    padding:75px 20px 25px 20px;
+    margin: 0 6.25%;
+    padding:20px 0 30px 0;
     box-sizing: border-box;
     color: #fff;
     display: block;
     float: left;
-
 }
 
 .panel-my-next-walk .title {
@@ -366,10 +382,9 @@ h6 > img {
     background-color:#ffd800 !important;
 }
 
-
 .panel-invitations{
     width:100%;
-    padding:30px 20px 0 20px;
+    padding:30px 0 0 0;
     box-sizing: border-box;
     display: block;
     background: #ffd800;
@@ -378,7 +393,8 @@ h6 > img {
 }
 
 .panel-invitations .title {
-    width: 100%;
+    width: 87.5%;
+    margin: 0 6.25%;
     font-family: 'museo500';
     text-align: left;
     font-size: 17px;
@@ -386,60 +402,50 @@ h6 > img {
     float: left;
 }
 
-.panel-invitations > .walking-list{
-    width:100%;
+.walking-list {
+    width:600px;
     font-family: 'museo500';
+    display: block;
+    background: #ffd800;
     font-size: 10px;
-    float: left;
+    overflow: hidden;
 }
 
-.panel-invitations > .walking-list > div {
-    width:auto;
-    float: left;
-}
-
-.panel-invitations > .walking-list > div:nth-child(1) {
-    width:auto;
-    padding: 0 12px 0 0;
+.walking-list > div {
+    width:200px;
+    padding: 0 20px;
     border-right:1px solid #ffe96c;
     box-sizing: border-box;
+    float: left;
 }
 
-.panel-invitations > .walking-list > div:nth-child(2) {
-    width:auto;
-    padding:0 10px;
-}
-
-.panel-invitations > .walking-list > div:nth-child(3) {
-    width:32px;
-}
-
-.panel-invitations > .walking-list > div > table {
-    width: 104px;
+.walking-list > div > table {
+    width: 100%;
     height:auto;
 }
 
-.panel-invitations > .walking-list >  div > table tr {
-    width: 104px;
+.walking-list >  div > table tr {
+    width: 100%;
     height: 44px;
 }
 
-.panel-invitations > .walking-list > div > table tr:last-child {
-    width: 104px;
+.walking-list > div > table tr:last-child {
+    width: 100%;
     height: 60px;
 }
 
-.panel-invitations > .walking-list > div > table tr td.image {
+.walking-list > div > table tr td.image {
     width:24px;
     height:24px;
     border-radius: 16px;
+    margin-top: 6px;
     overflow: hidden;
     display: block;
     float: left;
 }
 
-.panel-invitations > .walking-list > div > table tr td.text {
-    width:72px;
+.walking-list > div > table tr td.text {
+    width:100px;
     height:auto;
     display: block;
     margin-left: 8px;
@@ -448,7 +454,7 @@ h6 > img {
 }
 
 
-.panel-invitations  h2 {
+.walking-list  h2 {
     font-family: 'museo700';
     font-size: 12px;
     color: #000000;
@@ -458,17 +464,17 @@ h6 > img {
     margin: 0;
 }
 
-.panel-invitations  h3 {
+.walking-list  h3 {
     font-family: 'museo500';
-    font-size: 9px;
+    font-size: 11px;
     color: #000000;
     text-align: left;
     padding: 0;
-    margin: 3px 0 0 0;
+    margin: 4px 0 0 0;
     text-wrap: none;
 }
 
-.panel-invitations > .walking-list  .walk_number {
+.walking-list  .walk_number {
     position: relative;
     width:38px;
     height:38px;
@@ -477,7 +483,7 @@ h6 > img {
     float: left;
 }
 
-.panel-invitations > .walking-list  .walk_number p {
+.walking-list  .walk_number p {
     position: absolute;
     width:18px;
     height:18px;
@@ -532,7 +538,6 @@ h6 > img {
     padding: 0 4px 0 8px;
     float: left;
 }
-
 
 .panel-history div > a{
     text-decoration: none;
@@ -598,9 +603,9 @@ h6 > img {
 }
 
 .panel-walking-list{
-    width: 87.5%;
+    width: 100%;
     height:44px;
-    margin: 0 6.25%;
+    padding: 0 20px;
     box-sizing: border-box;
     display: block;
 }
@@ -666,18 +671,18 @@ h6 > img {
 .panel-join-a-walk-list{
     width: 100%;
     height:auto;
-    padding:20px 6.25%;
+    padding:20px 20px;
     box-sizing: border-box;
     font-family:'museo500';
     display: block;
     float: left;
 }
 
-.panel-join-a-walk-list:nth-child(even){
+.panel-join-a-walk-list:nth-child(odd){
     background: #fff;
 }
 
-.panel-join-a-walk-list:nth-child(odd){
+.panel-join-a-walk-list:nth-child(even){
     background: #ffd800;
 }
 
@@ -701,16 +706,18 @@ h6 > img {
     height: 16px;
     line-height: 16px;
     font-size: 12px;
-    padding: 0 25px 0 0;
+    padding: 0;
+    margin-right: 25px;
     float: left;
 }
 
 .panel-join-a-walk-list > div > label > h1 {
-    width:auto;
+    width:88px;
     font-size: 11px;
     line-height:17px;
     height: 16px;
     text-wrap: none;
+    text-align: left;
     color:#000;
     margin: 0;
     padding: 0;
@@ -779,7 +786,7 @@ h6 > img {
 }
 .panel-join-a-walk-list > .status > button:nth-child(2){
     color: #000;
-    background: #fff;
+    background: #f1f1f1;
 }
 
 .panel-join-a-walk-list > .status > button:nth-last-child(1){
@@ -797,26 +804,30 @@ h6 > img {
 }
 
 .panel-single-row{
-    width: 87.5%;
+    width: 100%;
     height:auto;
-    padding-top: 35px;
-    margin:0 6.25% 6px 6.25%;
+    padding: 35px 20px 6px 20px;
     box-sizing: border-box;
     display: block;
     float: left;
 }
 
 .panel-history-list{
-    width: 87.5%;
+    width: 100%;
     height:43px;
-    margin:0 6.25%;
-    border-bottom:1px solid #61b6e4;
+    padding:0 20px;
     box-sizing: border-box;
     font-family:'museo500';
     float: left;
 }
 
-.panel-history-list > label{
+.panel-history-list > div{
+    width: 100%;
+    height:43px;
+    border-bottom:1px solid #61b6e4;
+}
+
+.panel-history-list > div > label{
     width:50%;
     height: 16px;
     line-height: 43px;
@@ -825,24 +836,24 @@ h6 > img {
     float: left;
 }
 
-.panel-history-list > label span{
+.panel-history-list > div > label span{
     color: #ffd800;
 }
 
-.panel-history-list > h1{
+.panel-history-list > div > h1{
     width:66px;
     height: 16px;
     line-height: 16px;
     background: url("../img/icon_clock_36.png") no-repeat left;
     background-size:12px;
     font-size: 10px;
-    text-indent: 16px;
+    text-indent: 10px;
     margin-top: 13px;
-    padding: 0 5px;
+    padding: 1px 5px 0 5px;
     float: left;
 }
 
-.panel-history-list > button{
+.panel-history-list > div > button{
     width:60px;
     height: 20px;
     line-height: 15px;
@@ -856,19 +867,335 @@ h6 > img {
     float: right;
 }
 
-.panel-history-list > button.created{
+.panel-history-list > div > button.created{
     color: #000;
     background: #ffd800;
 }
-.panel-history-list > button.joined{
+.panel-history-list > div > button.joined{
     color: #000;
     background: #fff;
 }
 
-.panel-history-list > button.ns{
+.panel-history-list > div > button.ns{
     color: #fff;
     background: #000;
     text-transform: uppercase;
+}
+
+.panel-create-walk{
+    width: 100%;
+    height:auto;
+    padding: 0 6.25%;
+    box-sizing: border-box;
+    font-family:'museo500';
+    margin-top: 20px;
+    display: block;
+    float: left;
+}
+
+.panel-create-walk > h1{
+    width: auto;
+    height:auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'museo300';
+    font-size: 40px;
+    text-align: center;
+    display: block;
+}
+
+.panel-week-selector{
+    width: 100%;
+    height:32px;
+    padding:0 20px;
+    margin: 10px 0 12px 0;
+    box-sizing: border-box;
+    float: left;
+}
+
+.panel-week-selector > div {
+    width: 100%;
+    border-radius: 16px;
+    font-family:'museo500';
+    background: #ffd800;
+    color: #000;
+    display: block;
+    float: left;
+}
+
+
+
+.panel-week-selector  > div > div {
+    line-height: 33px;
+    float: left;
+}
+
+.panel-week-selector  > div > div > a  {
+    text-decoration: none;
+    padding: 0;
+    color: #000;
+}
+
+.panel-week-selector  > div > div:nth-child(1){
+    width: 20%;
+    padding-left: 15px;
+    box-sizing: border-box;
+    font-size: 11px;
+    text-align: left;
+}
+
+.panel-week-selector  > div > div:nth-child(2){
+    width: 60%;
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+}
+
+.panel-week-selector  > div > div:nth-child(3){
+    width: 20%;
+    padding-right: 15px;
+    box-sizing: border-box;
+    font-size: 11px;
+    text-align: right;
+}
+
+.panel-week{
+    width: 100%;
+    height: 15px;
+    padding: 0 20px;
+    font-family:'museo500';
+    font-size: 11px;
+    color: #ffd800;
+    float: left;
+}
+
+.panel-week > div{
+    width: 14.285%;
+    text-align: center;
+    float: left;
+}
+
+.panel-days{
+    width: 100%;
+    height: 32px;
+    padding: 0 20px;
+    margin: 8px 0 0 0;
+    font-family:'museo500';
+    font-size: 15px;
+    color: #fff;
+    float: left;
+}
+
+.panel-days > div{
+    width: 14.285%;
+    text-align: center;
+    line-height: 32px;
+    float: left;
+}
+
+.panel-days > div > span.today{
+    padding: 6px;
+    border-radius: 16px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    line-height: 32px;
+}
+
+.panel-days > div > span.selected{
+    padding: 6px;
+    border-radius: 16px;
+    background: #ffd800;
+    color: #000;
+    text-align: center;
+    line-height: 32px;
+}
+
+.panel-time{
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    background: #ffd800;
+    margin-bottom: 25px;
+    float: left;
+}
+
+.panel-time > div {
+    width: 190px;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.panel-time > div > div{
+    width: auto;
+    height: auto;
+    text-align: center;
+    float: left;
+}
+
+.panel-time > div > div:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    line-height: 63px;
+    border-radius: 30px;
+    font-size: 27px;
+    font-family: 'museo300';
+    background: #fff;
+    color: #000;
+}
+
+.panel-time > div > div:nth-child(2) {
+    width: 26px;
+    height: 60px;
+    line-height: 63px;
+    font-size: 27px;
+    font-family: 'museo300';
+    color: #000;
+}
+
+.panel-time > div > div:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    line-height: 63px;
+    border-radius: 30px;
+    font-size: 27px;
+    font-family: 'museo300';
+    background: #fff;
+    color: #000;
+}
+
+.panel-time > div > div:nth-child(4) {
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    border-radius: 16px;
+    margin:14px 0 0 12px;
+    font-size: 10px;
+    font-family: 'museo300';
+    background: #048cd4;
+    color: #fff;
+}
+
+.panel-create-new-footer{
+    width: 100%;
+    height: auto;
+    padding-bottom:25px;
+    background: #fff;
+    bottom: 0;
+    position: fixed;
+}
+
+.panel-create-new-footer.no-color{
+    background: transparent !important;
+}
+
+.panel-date-created{
+    width:100%;
+    height: auto;
+    padding:0 20px;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    float: left;
+}
+
+.panel-date-created .title {
+    width: 100%;
+    font-family: 'museo500';
+    text-align: left;
+    font-size: 15px;
+    padding-bottom: 8px;
+    line-height: 24px;
+    float: left;
+}
+
+.panel-date-created > div {
+    width:100%;
+    height: 16px;
+    display: block;
+}
+
+.panel-date-created > div > label {
+    width:auto;
+    height: 16px;
+    line-height: 16px;
+    font-family: 'museo500';
+    font-size: 12px;
+    padding: 0;
+    margin-right: 15px;
+    float: left;
+}
+
+.panel-date-created > div > label > h1 {
+    width:95px;
+    font-family: 'museo500';
+    font-size: 12px;
+    line-height:17px;
+    height: 16px;
+    text-wrap: none;
+    color: #ffd800;
+    text-align: left;
+    padding: 0;
+    float: left;
+}
+
+.panel-invite-list{
+    width: 100%;
+    height:44px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+}
+
+.panel-invite-list > img{
+    width:32px;
+    height:32px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.panel-invite-list > h2{
+    width:130px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 0 0 14px;
+    letter-spacing: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    margin: 0;
+    float: left;
+}
+
+.panel-invite-list > button{
+    width:60px;
+    height: 20px;
+    line-height: 19px;
+    margin-top: 6px;
+    border-radius: 10px;
+    font-family:'museo500';
+    font-size: 11px;
+    color: #000;
+    background: #fff;
+    letter-spacing: 0;
+    border: 0;
+    outline: none;
+    float: right;
+}
+
+.panel-invite-list > button.active {
+    color: #000;
+    background: #ffd800;
+}
+
+.panel-space{
+    width: 100%;
+    height:30px;
+    float: left;
 }
 
 .font11 {
@@ -897,6 +1224,8 @@ h6 > img {
 .paddingTop40{padding-top: 40px;}
 .paddingTop30{padding-top: 30px;}
 .paddingTop0{padding-top: 0 !important;}
+
+.paddingBottom10{padding-bottom: 10px;}
 
 .marginTop6{margin-top: 6px !important;}
 .marginTop12{margin-top: 12px !important;}

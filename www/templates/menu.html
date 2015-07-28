@@ -125,11 +125,11 @@
 </ion-pane>-->
 <ion-pane  on-swipe-right="onSwipeRight()">
 	<ion-header-bar class="panel-header-1 marginTop40">
-		<div>
+		<div class="logo">
 			<img src="img/logo_header.png"/>
 		</div>
 	</ion-header-bar>
-	<ion-content>
+	<ion-content class="main-header-space">
 		<div class="panel-my-next-walk" ng-show = "!data.nextWalk">
 			<!-- bind the next walk object -->
 
@@ -160,11 +160,11 @@
 			</div>
 		</div>
 		<!--Closing Panel My Next Walk-->
-
 		<div class="panel-invitations">
-			<!-- bind the next walk object -->
 			<label class="title">Walking Invitations</label>
+		</div>
 
+		<ion-scroll zooming="true" direction="x" style="width: 100%; height: 100px;">
 			<div class="walking-list">
 				<div>
 					<table>
@@ -175,7 +175,6 @@
 									<h3>Wed 22, Jul 2015 <br/> 5.00 AM</h3>
 							</td>
 						</tr>
-
 						<tr>
 							<td class="image"><img src="img/icon_wall_small_white.png"></td>
 							<td class="text">
@@ -194,7 +193,6 @@
 									<h3>Sat 25, Jul 2015 <br/> 6.00 PM</h3>
 							</td>
 						</tr>
-
 						<tr>
 							<td class="image"><img src="img/icon_wall_small_white.png"></td>
 							<td class="text">
@@ -205,13 +203,24 @@
 				</div>
 
 				<div>
-					<div class="walk_number" ui-sref="walkNow">
-						<img src="img/icon_wall_small_black40.png">
-						<p>05</p>
-					</div>
+					<table>
+						<tr>
+							<td class="image"><img src="img/img_people3.png"></td>
+							<td class="text">
+								<h2> with Maria<h2>
+									<h3>Sat 25, Jul 2015 <br/> 6.00 PM</h3>
+							</td>
+						</tr>
+						<tr>
+							<td class="image"><img src="img/icon_wall_small_white.png"></td>
+							<td class="text">
+								<h3 class="marginTop6">13 friends walk with her</h3>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
-		</div>
+		</ion-scroll>
 		<!--Closing Walking Invitation-->
 
 	</ion-content>
