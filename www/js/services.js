@@ -18,13 +18,12 @@ angular.module('WalkWithMeApp.services',[]).factory('userService', function($htt
                   url: '/json/register.json'
               });
       },
-      Menu : function (){              
+      MenuService : function (mobileNumber, username){              
+              
               return $http({
                   method : 'GET',
                   url: 'http://localhost/WalkWithMe/php/index.php/WalkController/loadMenu',
-                  data : {"UserId" : 713456781 , "Username" : "Mandy Moore"}
-        }).success(function(data){
-              console.log(data);
+                  data : {"mobileNumber" : mobileNumber , "username" : username}
         });
       }// end function
 

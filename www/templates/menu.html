@@ -123,14 +123,14 @@
 		</div>
 	</ion-content>
 </ion-pane>-->
-<ion-pane  on-swipe-right="onSwipeRight()">
+<ion-pane  on-swipe-right="onSwipeRight()" data-ng-controller = "MenuCtrl">
 	<ion-header-bar class="panel-header-1 marginTop40">
 		<div class="logo">
 			<img src="img/logo_header.png"/>
 		</div>
 	</ion-header-bar>
 	<ion-content class="main-header-space">
-		<div class="panel-my-next-walk" ng-show = "!data.nextWalk">
+		<div class="panel-my-next-walk" ng-show = "!data.nextWalk" data-ng-repeat="walks in myNextWalk">
 			<!-- bind the next walk object -->
 
 			<label class="title">My Next Walk</label>
@@ -138,11 +138,11 @@
 			<div>
 				<label>
 					<span class="icon"><img src="img/icon_calendar_48.png"/></span>
-					<h1>{{date}}</h1>
+					<h1>{{walks.date}}</h1>
 				</label>
 				<label>
 					<span class="icon"><img src="img/icon_clock_48.png"/></span>
-					<h1>{{walkTime}}</h1>
+					<h1>{{walks.time}}</h1>
 				</label>
 			</div>
 

@@ -113,13 +113,13 @@ angular.module('WalkWithMeApp.controllers', [])
 
 .controller('MenuCtrl', function($window, $rootScope, $scope,$ionicLoading, $state, userService, errorService) {
 
-    $ionicLoading.show({ template: 'Loading...' });
+    //$ionicLoading.show({ template: 'Loading...' });
     // TODO : Remove Hard coding in live
     var mobileNumber = 713456781;
     var username = "Mandy Moore";
     
     userService.MenuService(mobileNumber, username)
-        .success(function(data){
+        .success(function(data) {
 
             if ( data.statusCode > 0 ){
                 errorService.ShowError('Server appeared to be offline or in maintainance, Please try again later');
@@ -128,8 +128,9 @@ angular.module('WalkWithMeApp.controllers', [])
             }
             
             else{
+                
                 // Setting my next walk data
-                $scope.date = data.nextWalk;
+                $scope.myNextWalk = data.nextWalk;
                 // Setting the walking invitiations
                 $scope.inviteWalk = data.invitations;
                 // Setting the walking history
