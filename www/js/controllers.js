@@ -111,64 +111,46 @@ angular.module('WalkWithMeApp.controllers', [])
     }
 })
 
-.controller('MenuCtrl', function($scope,$ionicLoading, $state) {
+.controller('MenuCtrl', function($window, $rootScope, $scope,$ionicLoading, $state, userService, errorService) {
 
-    var data = {
+    $ionicLoading.show({ template: 'Loading...' });
+    // TODO : Remove Hard coding in live
+    var mobileNumber = 713456781;
+    var username = "Mandy Moore";
+    
+    userService.MenuService(mobileNumber, username)
+        .success(function(data){
 
-
-        "nextWalk": {
-            "Date": "Sat 25, July 2015",
-            "Time": "5.00 pm",
-            "Participants": [1, 4, 3, 5, 2, 6]
-        },
-        "invitations": [
-
-            {
-                "Inviter": "Jerry",
-                "DateInvite": "Wed 22, July 2015",
-                "Time": "5.00 am",
-                "Pariticipants": ["Senuri", "Mandy", "Kasuni"]
-            }, {
-                "Inviter": "Tom",
-                "DateInvite": "Monday 20, July 2015",
-                "Time": "5.30 am",
-                "Pariticipants": ["Senuri", "Tim", "Tic"]
+            if ( data.statusCode > 0 ){
+                errorService.ShowError('Server appeared to be offline or in maintainance, Please try again later');
+                $state.go('start');
+                return;
             }
+            
+            else{
+                // Setting my next walk data
+                $scope.date = data.nextWalk;
+                // Setting the walking invitiations
+                $scope.inviteWalk = data.invitations;
+                // Setting the walking history
+                $scope.historyWalk = data.walkHistory;
+                $ionicLoading.hide(); 
 
-        ],
-        "walkHistory": [
-            {
-                "Month": "July",
-                "countWalks": 4
-            },
-            {
-                "Month": "June",
-                "countWalks": 3
-            },
-            {
-                "Month": "May",
-                "countWalks": 2
+                $scope.range = function(n){
+                        return new Array(n);
+                };
+
             }
-        ]
-    };
-
-// My Next Walk    
-$scope.date = data.nextWalk.Date;
-$scope.walkTime = data.nextWalk.Time;
-$scope.walkParticipants = data.nextWalk.Participants;
-
-// Walking Invitations
-$scope.inviteWalk = data.invitations;
-
-// History
-$scope.historyWalk = data.walkHistory;
-
-$scope.range = function(n){
-    return new Array(n);
-};
+                     
+        })
+        .error(function(data) {
+            // htpp error
+            //show error message and exit the application
+            errorService.ShowError('Server appeared to be offline or in maintainance(HTTP), Please try again later');
+            return;
+        });
 
 })
-
 
 .controller('WalkCtrl', function($scope,$ionicLoading, $state) {
 

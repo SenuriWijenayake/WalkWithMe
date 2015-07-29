@@ -21,7 +21,7 @@ angular.module('WalkWithMeApp.services',[]).factory('userService', function($htt
       Menu : function (){              
               return $http({
                   method : 'GET',
-                  url: 'http://localhost/WalkWithMe/php/index.php/MenuController/loadMenu',
+                  url: 'http://localhost/WalkWithMe/php/index.php/WalkController/loadMenu',
                   data : {"UserId" : 713456781 , "Username" : "Mandy Moore"}
         }).success(function(data){
               console.log(data);
