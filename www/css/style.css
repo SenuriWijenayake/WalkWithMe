@@ -1027,14 +1027,7 @@ h6 > img {
     margin: 0 auto;
 }
 
-.panel-time > div > div{
-    width: auto;
-    height: auto;
-    text-align: center;
-    float: left;
-}
-
-.panel-time > div > div:nth-child(1) {
+.panel-time > div .btn-time {
     width: 60px;
     height: 60px;
     line-height: 63px;
@@ -1043,29 +1036,23 @@ h6 > img {
     font-family: 'museo300';
     background: #fff;
     color: #000;
+    border: none;
+    text-align: center;
+    float: left;
 }
 
-.panel-time > div > div:nth-child(2) {
+.panel-time > div .dots {
     width: 26px;
     height: 60px;
     line-height: 63px;
     font-size: 27px;
     font-family: 'museo300';
     color: #000;
+    text-align: center;
+    float: left;
 }
 
-.panel-time > div > div:nth-child(3) {
-    width: 60px;
-    height: 60px;
-    line-height: 63px;
-    border-radius: 30px;
-    font-size: 27px;
-    font-family: 'museo300';
-    background: #fff;
-    color: #000;
-}
-
-.panel-time > div > div:nth-child(4) {
+.panel-time > div .btn-am {
     width: 32px;
     height: 32px;
     line-height: 33px;
@@ -1075,6 +1062,9 @@ h6 > img {
     font-family: 'museo300';
     background: #048cd4;
     color: #fff;
+    border: none;
+    text-align: center;
+    float: left;
 }
 
 .panel-create-new-footer{

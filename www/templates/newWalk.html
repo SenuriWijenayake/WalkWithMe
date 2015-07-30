@@ -1,25 +1,25 @@
-<ion-pane>
+<ion-pane data-ng-controller="WalkCtrl">
 	<ion-header-bar class="panel-header-1 marginTop40">
 		<div class="logo">
 			<img src="img/logo_header.png"/>
 		</div>
 
 		<div class="title-bar">
-			<div class="back">Back</div>
+			<div class="back" ui-sref="menu">Back</div>
 			Create New Walk
 		</div>
 	</ion-header-bar>
 
 	<ion-content>
 		<div class="panel-create-walk">
-				<h1>27 <span class="yellow-color">Jul</span> 15</h1>
+				<h1> {{date}} <span class="yellow-color">{{month}}</span> {{year}}</h1> 
 		</div>
 
 		<div class="panel-week-selector">
 			<div>
-				<div><a href="#">Prev</a></div>
-				<div>July 2015</div>
-				<div><a href="#">Next</a></div>
+				<div ng-click="setThisWeek()"><a>Prev</a></div>
+				<div>{{calTitle}}</div>
+				<div  ng-click="setNextWeek()"><a>Next</a></div>
 			</div>
 		</div>
 
@@ -33,14 +33,14 @@
 			<div>Sa</div>
 		</div>
 
-		<div class="panel-days">
-			<div>26</div>
-			<div>27</div>
-			<div><span class="today">28</span></div>
-			<div>29</div>
-			<div>30</div>
-			<div><span class="selected">31</span></div>
-			<div>01</div>
+		<div id="dayPanel" class="panel-days">
+			<div ng-click="selectDate('sun')"><span  ng-class='{"true":"selected"}[selectedDate=="sun"]'>{{sunday}}</span></div>
+			<div id="mon" ng-click="selectDate()">{{mon}}</div>
+			<div id="tue" ng-click="selectDate()">{{tue}}</div>
+			<div id="wed" ng-click="selectDate()">{{wed}}</div>
+			<div id="thur" ng-click="selectDate()" >{{thur}}</div>
+			<div id="fri" ng-click="selectDate()">{{fri}}</div>
+			<div id="sat" ng-click="selectDate()">{{sat}}</div>
 		</div>
 
 	</ion-content>
@@ -50,14 +50,14 @@
 		<div class="panel-create-new-footer">
 			<div class="panel-time">
 				<div>
-					<div>05</div>
-					<div>:</div>
-					<div>15</div>
-					<div>AM</div>
+					<button ng-click="increaseHour()" class="btn-time">{{hour}}</button>
+					<span class="dots">:</span>
+					<button  ng-click="increaseMinutes()" class="btn-time">{{minutes}}</button>
+					<button  ng-click="change()" class="btn-am">{{am}}</button>
 				</div>
 			</div>
 			<div class="form-content">
-				<button class="button-big-yellow">Invite friends</button>
+				<button class="button-big-yellow" ng-click="onCreate()">Invite friends</button>
 			</div>
 		</div>
 	</ion-footer-bar>

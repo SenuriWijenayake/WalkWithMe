@@ -33,8 +33,8 @@ class WalkController extends CI_Controller {
     
 		//Extracting next walk details
 		$nextWalk = $this->Walk->getNextWalk($mobileNumber);
-    if(count($nextWalk) > 0)
-      {
+    	if(count($nextWalk) > 0)
+      	{
             foreach ($nextWalk as $row)
             {
                 

@@ -1,4 +1,4 @@
-angular.module('WalkWithMeApp.controllers', [])
+angular.module('WalkWithMeApp.controllers', ['angularMoment'])
 
 .controller('StartCtrl', function($window, $rootScope, $scope,$ionicLoading, $state, userService, errorService) {
 
@@ -141,6 +141,10 @@ angular.module('WalkWithMeApp.controllers', [])
                         return new Array(n);
                 };
 
+                $scope.isFirstTime = function() {
+                return data.statusCode;
+                };
+
             }
                      
         })
@@ -153,20 +157,103 @@ angular.module('WalkWithMeApp.controllers', [])
 
 })
 
-.controller('WalkCtrl', function($scope,$ionicLoading, $state) {
 
-    // show login ctrl
-    $scope.create = function(){
-        alert("Create");
+.controller('WalkCtrl', function($scope,$ionicLoading, $state, $window) {
+
+    //Setting date
+    $scope.today = moment().format('d');
+    $scope.date = moment().format("DD"); 
+    $scope.month = moment().format("MMM"); 
+    $scope.year = moment().format("YY"); 
+    $scope.calTitle = moment().format("MMM YYYY");
+
+    $scope.setThisWeek = function(){
+        
+        $scope.sunday = moment().weekday(0).format("DD");
+        $scope.mon = moment().weekday(1).format("DD");
+        $scope.tue = moment().weekday(2).format("DD");
+        $scope.wed = moment().weekday(3).format("DD");
+        $scope.thur = moment().weekday(4).format("DD");
+        $scope.fri = moment().weekday(5).format("DD");
+        $scope.sat = moment().weekday(6).format("DD");
+
     }
 
-    $scope.newWalk = function(){
-        alert("New walk");
+    $scope.setNextWeek = function(){
+        
+        
+        $scope.sunday = moment().weekday(7).format("DD");
+        $scope.mon = moment().weekday(8).format("DD");
+        $scope.tue = moment().weekday(9).format("DD");
+        $scope.wed = moment().weekday(10).format("DD");
+        $scope.thur = moment().weekday(11).format("DD");
+        $scope.fri = moment().weekday(12).format("DD");
+        $scope.sat = moment().weekday(13).format("DD");
+    }
+    
+    $scope.setThisWeek();
+    
+    /*
+        Calendar click event
+    */
+    $scope.selectedDate = null;
+    $scope.selectDate = function(_index){
+        console.log(_index);
+        $scope.selectedDate = _index;
+
+        //rest
+    }
+
+
+
+    //Setting the time
+    $scope.hour = 05;
+    $scope.minutes = 30;
+    $scope.am = "AM";
+    $scope.increaseHour = function()
+    {      
+          $scope.increaseHour =  function () {
+            if ($scope.hour == "12") {
+                $scope.hour = 1;
+            }
+            else {
+                $scope.hour = $scope.hour + 1;
+            }
+        }
+    }
+
+    $scope.increaseMinutes = function()
+    {
+        if($scope.minutes == "45")
+        {
+            $scope.minutes = "00";
+        }
+        else
+        {
+            $scope.minutes = parseInt($scope.minutes) + 15;
+        }
+        
+    }
+
+    $scope.change = function()
+    {
+        if($scope.am == "AM")
+            $scope.am = "PM";
+        else
+            $scope.am = "AM";
+        
+    }
+
+    $scope.onCreate = function(){
+        alert($scope.hour + " " + $scope.minutes);
     }
 
     $scope.onSwipeRight = function(){
          $state.go('menu');
     }
+
+       
+    
 })
 .controller('HistoryCtrl', function($scope,$ionicLoading, $state) {
 

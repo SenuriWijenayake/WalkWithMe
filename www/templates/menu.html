@@ -5,10 +5,7 @@
 		<h1 class="title" style="text-center">Walk With Me</h1>
 	</ion-header-bar>
 	<ion-content>
-
-
 		<div class="list list-inset" ng-show = "!data.nextWalk"> 
-
 		
 		  
 		  <label class="item item-input">My Next Walk</label>
@@ -28,11 +25,9 @@
   		  <div class="item item-avatar">
     		<img src="img/sampleAvatar.jpg">    		    		
   		  </div>
-
 		</div>
 		<div class="list list-inset"  >
 		  <h2>Walking Invitations</h2>
-
 		  <div class="item item-avatar" data-ng-repeat="invites in inviteWalk" ng-show = "!data.invitations">
     		<img src="img/sampleAvatar.jpg">    		    		
     		<h2> with {{invites.Inviter}} <h2>
@@ -45,13 +40,10 @@
   		   <a class="button icon-right ion-chevron-right" ui-sref="join" ng-show = "!data.invitations">Join</a>
   		   <button class="button icon-left ion-star button-positive" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
 		</div>
-
 		<div class="item" ng-show = "!data.walkHistory">History
-
 		<label ng-repeat="history in historyWalk track by $index">
 		
 			{{history.Month}}
-
 			<label data-ng-repeat="walkCount in range(history.countWalks) track by $index"> 
 			<i class ="icon ion-ionic">
 			</i>
@@ -83,29 +75,24 @@
   		  <div class="item item-avatar">
     		<img src="img/sampleAvatar.jpg">    		    		
   		  </div>
-
 		</div>
 		<div class="list list-inset">
 		  <h2>Walking Invitations</h2>
-
 		  <div class="item item-avatar">
     		<img src="img/sampleAvatar.jpg">    		    		
     		<h2> with Jerry <h2>
     		<p>Wed 22, Jul 2015 <br/> 5.00 AM</p>
     		<p>5 of your friends are walking with him</p>
   		  </div>
-
 		<div class="item item-avatar">
     		<img src="img/sampleAvatar.jpg">    		    		
     		<h2> with Jerry <h2>
     		<p>Wed 22, Jul 2015 <br/> 5.00 AM</p>
     		<p>5 of your friends are walking with him</p>
   		  </div>
-
   		   <a class="button icon-right ion-chevron-right" ui-sref="join">Join</a>
   		   <button class="button icon-left ion-star button-positive" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
 		</div>
-
 		<div class="item">
 			History Jul
 			<i class="icon ion-ionic"></i>
@@ -130,7 +117,7 @@
 		</div>
 	</ion-header-bar>
 	<ion-content class="main-header-space">
-		<div class="panel-my-next-walk" ng-show = "!data.nextWalk" data-ng-repeat="walks in myNextWalk">
+		<div class="panel-my-next-walk"  data-ng-repeat="walks in myNextWalk" data-ng-if="!isFirstTime()">
 			<!-- bind the next walk object -->
 
 			<label class="title">My Next Walk</label>
@@ -146,11 +133,15 @@
 				</label>
 			</div>
 
+
 			<div class="panel-single-row-full marginTop30">
+				<label data-ng-repeat ="person in walks.participants track by $index">{{person.participantName}}</label>
+
 				<label>Walking with me</label>
 			</div>
 
 			<!-- TODO logic -->
+
 			<div class="image-list">				
 				<div data-ng-repeat="participant in walkParticipants">
 		  			<img src="img/img_people{{participant}}.png">
@@ -158,96 +149,73 @@
 				<div><img src="img/img_no_image_yellow.png"></div>				
 				<div>12+</div>
 			</div>
+
 		</div>
 		<!--Closing Panel My Next Walk-->
-		<div class="panel-invitations">
+
+
+		<div class="panel-invitations" data-ng-if="!isFirstTime()">
 			<label class="title">Walking Invitations</label>
 		</div>
 
+
 		<ion-scroll zooming="true" direction="x" style="width: 100%; height: 100px;">
-			<div class="walking-list">
-				<div>
-					<table>
-						<tr>
+			<div class="walking-list" data-ng-if="!isFirstTime()">
+				<div data-ng-repeat="invitation in inviteWalk track by $index">
+					<table >
+						<tr >
+							
 							<td class="image"><img src="img/img_people1.png"></td>
-							<td class="text">
-								<h2> with Jerry<h2>
-									<h3>Wed 22, Jul 2015 <br/> 5.00 AM</h3>
+							<td class="text"  >
+								<h2> with {{invitation.inviter}}<h2>
+									<h3>{{invitation.date}}<br/>{{invitation.time}}</h3>
+									<div data-ng-hide="true" data-ng-repeat="person1 in invitation.participants">{{person1.participantName}}</div>
 							</td>
+
 						</tr>
 						<tr>
 							<td class="image"><img src="img/icon_wall_small_white.png"></td>
 							<td class="text">
-								<h3 class="marginTop6">5 friends walk with him</h3>
+								<h3 class="marginTop6">{{inviteWalk.length}} friends walk with him</h3>
 							</td>
 						</tr>
 					</table>
 				</div>
 
-				<div>
-					<table>
-						<tr>
-							<td class="image"><img src="img/img_people3.png"></td>
-							<td class="text">
-								<h2> with Maria<h2>
-									<h3>Sat 25, Jul 2015 <br/> 6.00 PM</h3>
-							</td>
-						</tr>
-						<tr>
-							<td class="image"><img src="img/icon_wall_small_white.png"></td>
-							<td class="text">
-								<h3 class="marginTop6">13 friends walk with her</h3>
-							</td>
-						</tr>
-					</table>
-				</div>
-
-				<div>
-					<table>
-						<tr>
-							<td class="image"><img src="img/img_people3.png"></td>
-							<td class="text">
-								<h2> with Maria<h2>
-									<h3>Sat 25, Jul 2015 <br/> 6.00 PM</h3>
-							</td>
-						</tr>
-						<tr>
-							<td class="image"><img src="img/icon_wall_small_white.png"></td>
-							<td class="text">
-								<h3 class="marginTop6">13 friends walk with her</h3>
-							</td>
-						</tr>
-					</table>
-				</div>
 			</div>
 		</ion-scroll>
 		<!--Closing Walking Invitation-->
 
 	</ion-content>
 
+
 	<ion-footer-bar>
-		<div class="panel-footer-2">
+		<div class="panel-footer-2" >
+
 			<!-- bind the next walk object -->
+
 			<div class="form-content">
-				<button class="button-big-blue" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
+			 	<button class="button-big-blue" ui-sref="newWalk" ion-nav-animation="slide-in-up">Create new walk</button>
+
 			</div>
 
-			<div class="panel-history">
-				<div>History</div>
-				<div> Jul</div>
-				<i></i>
-				<i></i>
-				<i></i>
-				<i></i>
-				<div> Mar</div>
-				<i></i>
-				<i></i>
-				<i></i>
-				<div> Apr</div>
-				<i></i>
-				<i></i>
-				<div><a ui-sref="history">More</a></div>
-			</div>
+		
+
+			<div class="panel-history" data-ng-if="!isFirstTime()"  >
+					<div>History</div>
+				 
+					<div data-ng-repeat="histry in historyWalk track by $index"> {{histry.month}}
+
+						<div data-ng-repeat="_range in range((histry.countWalks)*1) track by $index"><i ></i> 
+						</div>
+					</div>
+
+					&nbsp  <a ui-sref="history">More..</a>
+				  
+			</div> 
+
 		</div>
+
 	</ion-footer-bar>
+
 </ion-pane>
