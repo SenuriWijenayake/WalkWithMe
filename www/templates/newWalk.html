@@ -34,13 +34,13 @@
 		</div>
 
 		<div id="dayPanel" class="panel-days">
-			<div ng-click="selectDate('sun')"><span  ng-class='{"true":"selected"}[selectedDate=="sun"]'>{{sunday}}</span></div>
-			<div id="mon" ng-click="selectDate()">{{mon}}</div>
-			<div id="tue" ng-click="selectDate()">{{tue}}</div>
-			<div id="wed" ng-click="selectDate()">{{wed}}</div>
-			<div id="thur" ng-click="selectDate()" >{{thur}}</div>
-			<div id="fri" ng-click="selectDate()">{{fri}}</div>
-			<div id="sat" ng-click="selectDate()">{{sat}}</div>
+			<div ng-click="selectDate({{sunday}})"><span  ng-class= "setClass({{sunday}})">{{sunday}}</span></div>
+			<div ng-click="selectDate({{mon}})"><span  ng-class="setClass({{mon}})">{{mon}}</span></div>
+			<div ng-click="selectDate({{tue}})"><span  ng-class="setClass({{tue}})">{{tue}}</span></div>
+			<div ng-click="selectDate({{wed}})"><span  ng-class="setClass({{wed}})">{{wed}}</span></div>
+			<div ng-click="selectDate({{thur}})"><span  ng-class="setClass({{thur}})">{{thur}}</span></div>
+			<div ng-click="selectDate({{fri}})"><span  ng-class="setClass({{fri}})">{{fri}}</span></div>
+			<div ng-click="selectDate({{sat}})"><span  ng-class="setClass({{sat}})">{{sat}}</span></div>
 		</div>
 
 	</ion-content>
@@ -50,10 +50,10 @@
 		<div class="panel-create-new-footer">
 			<div class="panel-time">
 				<div>
-					<button ng-click="increaseHour()" class="btn-time">{{hour}}</button>
+					<button class="button btn-time" ng-click="increaseHour()">{{hour}}</button>
 					<span class="dots">:</span>
-					<button  ng-click="increaseMinutes()" class="btn-time">{{minutes}}</button>
-					<button  ng-click="change()" class="btn-am">{{am}}</button>
+					<button class=" button btn-time" ng-click="increaseMinutes()">{{minutes}}</button>
+					<button class="button btn-am" ng-click="change()">{{am}}</button>
 				</div>
 			</div>
 			<div class="form-content">

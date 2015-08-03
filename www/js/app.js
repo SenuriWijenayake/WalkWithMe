@@ -93,6 +93,6 @@ angular.module('WalkWithMeApp', ['ionic', 'WalkWithMeApp.controllers', 'WalkWith
         .state('invite', {
             url: "/invite",
             templateUrl: "templates/invite.html",
-            controller: 'RegisterCtrl'
+            controller: 'InviteCtrl'
         })
 });

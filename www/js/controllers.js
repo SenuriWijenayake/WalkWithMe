@@ -158,17 +158,20 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
 })
 
 
-.controller('WalkCtrl', function($scope,$ionicLoading, $state, $window) {
+.controller('WalkCtrl', function($scope,$ionicLoading, $state, $window, $rootScope) {
 
     //Setting date
     $scope.today = moment().format('d');
     $scope.date = moment().format("DD"); 
+    $scope.dateCopy = $scope.date;
     $scope.month = moment().format("MMM"); 
     $scope.year = moment().format("YY"); 
     $scope.calTitle = moment().format("MMM YYYY");
 
     $scope.setThisWeek = function(){
         
+        $scope.selectedDate = null;
+        $scope.dateCopy = $scope.date;
         $scope.sunday = moment().weekday(0).format("DD");
         $scope.mon = moment().weekday(1).format("DD");
         $scope.tue = moment().weekday(2).format("DD");
@@ -181,7 +184,8 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
 
     $scope.setNextWeek = function(){
         
-        
+        $scope.selectedDate = null;
+        $scope.dateCopy = null;
         $scope.sunday = moment().weekday(7).format("DD");
         $scope.mon = moment().weekday(8).format("DD");
         $scope.tue = moment().weekday(9).format("DD");
@@ -193,18 +197,21 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
     
     $scope.setThisWeek();
     
-    /*
-        Calendar click event
-    */
+    //Calender click event
     $scope.selectedDate = null;
     $scope.selectDate = function(_index){
-        console.log(_index);
         $scope.selectedDate = _index;
+        $scope.setClass(_index);
 
-        //rest
     }
 
-
+    //function to set the class of the days
+    $scope.setClass = function(_date){
+       if($scope.selectedDate == _date)
+            return "selected";
+        if($scope.dateCopy == _date)
+            return "today";
+    }
 
     //Setting the time
     $scope.hour = 05;
@@ -245,7 +252,9 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
     }
 
     $scope.onCreate = function(){
-        alert($scope.hour + " " + $scope.minutes);
+        $rootScope.walkDate = $scope.selectedDate + " " + $scope.month + " " + $scope.year;
+        $rootScope.walkTime = $scope.hour + "." + $scope.minutes + " " + $scope.am;
+        $state.go('invite');
     }
 
     $scope.onSwipeRight = function(){
@@ -255,6 +264,23 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
        
     
 })
+
+.controller('InviteCtrl', function($scope,$ionicLoading, $state,$rootScope) {
+
+    //show date and time
+    $scope.walkDate = $rootScope.walkDate;
+
+    // show login ctrl
+    $scope.history = function(){
+        alert("history");
+    }
+
+    $scope.onSwipeRight = function(){
+        $state.go('menu');
+    }
+})
+
+
 .controller('HistoryCtrl', function($scope,$ionicLoading, $state) {
 
     // show login ctrl
