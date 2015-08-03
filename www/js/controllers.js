@@ -267,9 +267,6 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
 
 .controller('InviteCtrl', function($scope,$ionicLoading, $state,$rootScope) {
 
-    //show date and time
-    $scope.walkDate = $rootScope.walkDate;
-
     // show login ctrl
     $scope.history = function(){
         alert("history");
