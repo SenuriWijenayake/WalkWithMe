@@ -5,7 +5,7 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
     $ionicLoading.show({ template: 'Loading...' });
 
     userService.ServerStats()
-        .success(function(data, status) {
+        .success(function(data) {
 
             // TODO : Remove Hard coding in live
             //$window.localStorage['mobileNo'] = '94777331370';
@@ -161,48 +161,43 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
 .controller('WalkCtrl', function($scope,$ionicLoading, $state, $window, $rootScope) {
 
     //Setting date
-    $scope.today = moment().format('d');
     $scope.date = moment().format("DD"); 
     $scope.dateCopy = $scope.date;
     $scope.month = moment().format("MMM"); 
     $scope.year = moment().format("YY"); 
     $scope.calTitle = moment().format("MMM YYYY");
+    $scope.weekOne = [];
+    $scope.weekTwo = [];
 
     $scope.setThisWeek = function(){
-        
+        $scope.isFirstWeek = 1;
         $scope.selectedDate = null;
         $scope.dateCopy = $scope.date;
-        $scope.sunday = moment().weekday(0).format("DD");
-        $scope.mon = moment().weekday(1).format("DD");
-        $scope.tue = moment().weekday(2).format("DD");
-        $scope.wed = moment().weekday(3).format("DD");
-        $scope.thur = moment().weekday(4).format("DD");
-        $scope.fri = moment().weekday(5).format("DD");
-        $scope.sat = moment().weekday(6).format("DD");
-
+        for(var i=0;i<=6;i++){
+            $scope.weekOne[i] = moment().weekday(i).format("DD");
+        }
+        
     }
 
     $scope.setNextWeek = function(){
-        
+        //$scope.dateCopy = null;
         $scope.selectedDate = null;
-        $scope.dateCopy = null;
-        $scope.sunday = moment().weekday(7).format("DD");
-        $scope.mon = moment().weekday(8).format("DD");
-        $scope.tue = moment().weekday(9).format("DD");
-        $scope.wed = moment().weekday(10).format("DD");
-        $scope.thur = moment().weekday(11).format("DD");
-        $scope.fri = moment().weekday(12).format("DD");
-        $scope.sat = moment().weekday(13).format("DD");
+        $scope.isFirstWeek = 0;
+        
+        for(var i=7,j=0;i<=13,j<=6;i++,j++){
+            $scope.weekTwo[j] = moment().weekday(i).format("DD");
+        }
+
     }
-    
+    //Setting current week on the calender
     $scope.setThisWeek();
-    
+
     //Calender click event
-    $scope.selectedDate = null;
     $scope.selectDate = function(_index){
+
         $scope.selectedDate = _index;
         $scope.setClass(_index);
-
+        
     }
 
     //function to set the class of the days
@@ -265,29 +260,89 @@ angular.module('WalkWithMeApp.controllers', ['angularMoment'])
     
 })
 
-.controller('InviteCtrl', function($scope,$ionicLoading, $state,$rootScope) {
+.controller('InviteCtrl', function($window, $rootScope, $scope,$ionicLoading, $state, userService, errorService) {
 
-    // show login ctrl
-    $scope.history = function(){
-        alert("history");
-    }
+    // TODO : Remove Hard coding in live
+    var mobileNumber = 713456781;
+    var username = "Mandy Moore";
+        
+    userService.InviteService(mobileNumber, username)
+        .success(function(data) {
 
-    $scope.onSwipeRight = function(){
-        $state.go('menu');
-    }
+            if ( data.statusCode > 0 ){
+                errorService.ShowError('Server appeared to be offline or in maintainance, Please try again later');
+                $state.go('newWalk');
+                return;
+            }
+            
+            else{
+
+                $scope.myInvities = data.users;
+            }
+                     
+        })
+
+        .error(function(data) {
+            // htpp error
+            //show error message and exit the application
+            errorService.ShowError('Server appeared to be offline or in maintainance(HTTP), Please try again later');
+            return;
+        }); 
+  
+
 })
 
 
-.controller('HistoryCtrl', function($scope,$ionicLoading, $state) {
+.controller('HistoryCtrl', function($window, $rootScope, $scope,$ionicLoading, $state, userService, errorService) {
 
-    // show login ctrl
-    $scope.history = function(){
-        alert("history");
-    }
+    
+    // TODO : Remove Hard coding in live
+    var mobileNumber = 713456781;
+    var username = "Mandy Moore";
+        
+    userService.HistoryService(mobileNumber, username)
+        .success(function(data) {
 
-    $scope.onSwipeRight = function(){
-        $state.go('menu');
-    }
+            if ( data.statusCode > 0 ){
+                errorService.ShowError('Server appeared to be offline or in maintainance, Please try again later');
+                $state.go('menu');
+                return;
+            }
+            
+            else{
+                $scope.secondMonth = moment().subtract(1, 'months').format("MMM");
+                $scope.thirdMonth = moment().subtract(2, 'months').format("MMM");
+                $scope.historyMonthOne = data.firstMonth;
+                $scope.historyMonthTwo = data.secondMonth;
+                $scope.historyMonthThree = data.thirdMonth;
+    
+                $scope.isFirstTime = function() {
+                    return data.statusCode;
+                };
+
+                $scope.isInvited=function(n){
+                    if(n=="Created"){return 1;}
+                    else return 0;
+     
+                };
+
+                $scope.isJoined=function(n){
+                    if(n=="Joined"){return 1;}
+                    else return 0;
+     
+                };
+
+            }
+                     
+        })
+
+        .error(function(data) {
+            // htpp error
+            //show error message and exit the application
+            errorService.ShowError('Server appeared to be offline or in maintainance(HTTP), Please try again later');
+            return;
+        });
+
 })
 
 .controller('MotivationCtrl', function($scope,$ionicLoading, $state) {

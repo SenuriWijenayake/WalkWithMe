@@ -1,4 +1,4 @@
-<ion-pane on-swipe-right="onSwipeRight()">
+<ion-pane  on-swipe-right="onSwipeRight()" data-ng-controller = "HistoryCtrl" >
 
 	<ion-header-bar class="panel-header-1 marginTop40">
 		<div class="logo">
@@ -12,126 +12,56 @@
 	</ion-header-bar>
 
 	<ion-content>
-
+	<div data-ng-if = "historyMonthOne.length">
 		<div class="panel-single-row paddingTop0">
 			<label class="font11 yellow-color">This Month</label>
 		</div>
 
-		<div class="panel-history-list">
+			<!--Starting This Month-->
+
+		<div class="panel-history-list" data-ng-repeat="historyWalks in historyMonthOne" data-ng-if="!isFirstTime()">
 			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="created">Created</button>
+				<label>Walk on <span>{{historyWalks.walkDate}}</span></label>
+				<h1>{{historyWalks.walkTime}}</h1>
+				 
+				<button class="created" data-ng-if="isInvited(historyWalks.Type)">{{historyWalks.Type}}</button>
+				<button class="joined" data-ng-if="isJoined(historyWalks.Type)">{{historyWalks.Type}}</button>
 			</div>
 		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="joined">Joined</button>
-			</div>
+	</div>
+	
+			<!--Starting Next Month-->
+	<div data-ng-if = "historyMonthTwo.length">
+		<div class="panel-single-row">
+			<label class="font11 yellow-color">{{secondMonth}} <span class="white-color">2015</span></label>
 		</div>
 
-		<div class="panel-history-list">
+		<div class="panel-history-list" data-ng-repeat="historyWalks in historyMonthTwo" data-ng-if="!isFirstTime()">
 			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="ns">NS</button>
+				<label>Walk on <span>{{historyWalks.walkDate}}</span></label>
+				<h1>{{historyWalks.walkTime}}</h1>
+				<button class="created" data-ng-if="isInvited(historyWalks.Type)">{{historyWalks.Type}}</button>
+				<button class="joined" data-ng-if="isJoined(historyWalks.Type)">{{historyWalks.Type}}</button>
 			</div>
 		</div>
-
+	</div>
 		<!--Starting Next Month-->
 
+	<div data-ng-if = "historyMonthThree.length">
 		<div class="panel-single-row">
-			<label class="font11 yellow-color">Jun <span class="white-color">2015</span></label>
+			<label class="font11 yellow-color">{{thirdMonth}} <span class="white-color">2015</span></label>
 		</div>
 
-		<div class="panel-history-list">
+		<div class="panel-history-list" data-ng-repeat="historyWalks in historyMonthThree" data-ng-if="!isFirstTime()">
 			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="created">Created</button>
+				<label>Walk on <span>{{historyWalks.walkDate}}</span></label>
+				<h1>{{historyWalks.walkTime}}</h1>
+				<button class="created" data-ng-if="isInvited(historyWalks.Type)">{{historyWalks.Type}}</button>
+				<button class="joined" data-ng-if="isJoined(historyWalks.Type)">{{historyWalks.Type}}</button>
 			</div>
 		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="created">Created</button>
-			</div>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="joined">Joined</button>
-			</div>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="created">Created</button>
-			</div>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="ns">NS</button>
-			</div>
-		</div>
-
-		<!--Starting Next Month-->
-
-		<div class="panel-single-row">
-			<label class="font11 yellow-color">May <span class="white-color">2015</span></label>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="ns">NS</button>
-			</div>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="created">Created</button>
-			</div>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="created">Created</button>
-			</div>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="joined">Joined</button>
-			</div>
-		</div>
-
-		<div class="panel-history-list">
-			<div>
-				<label>Walk on <span>22, Wed</span></label>
-				<h1>5.00 PM</h1>
-				<button class="created">Created</button>
-			</div>
-		</div>
+	</div>
+		
 
 		<div class="panel-space"></div>
 

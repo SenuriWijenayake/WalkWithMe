@@ -34,13 +34,10 @@
 		</div>
 
 		<div id="dayPanel" class="panel-days">
-			<div ng-click="selectDate({{sunday}})"><span  ng-class= "setClass({{sunday}})">{{sunday}}</span></div>
-			<div ng-click="selectDate({{mon}})"><span  ng-class="setClass({{mon}})">{{mon}}</span></div>
-			<div ng-click="selectDate({{tue}})"><span  ng-class="setClass({{tue}})">{{tue}}</span></div>
-			<div ng-click="selectDate({{wed}})"><span  ng-class="setClass({{wed}})">{{wed}}</span></div>
-			<div ng-click="selectDate({{thur}})"><span  ng-class="setClass({{thur}})">{{thur}}</span></div>
-			<div ng-click="selectDate({{fri}})"><span  ng-class="setClass({{fri}})">{{fri}}</span></div>
-			<div ng-click="selectDate({{sat}})"><span  ng-class="setClass({{sat}})">{{sat}}</span></div>
+			
+			<div data-ng-if="isFirstWeek" data-ng-repeat ="day in weekOne track by $index" ng-click="selectDate({{day}})"><span  ng-class= "setClass({{day}})">{{day}}</span></div>
+			<div data-ng-if="!isFirstWeek" data-ng-repeat ="day in weekTwo track by $index" ng-click="selectDate({{day}})"><span  ng-class= "setClass({{day}})">{{day}}</span></div>
+			
 		</div>
 
 	</ion-content>

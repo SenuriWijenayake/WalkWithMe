@@ -1,4 +1,4 @@
-<ion-pane on-swipe-right="onSwipeRight()">
+<ion-pane on-swipe-right="onSwipeRight()" data-ng-controller = "InviteCtrl">
 
     <ion-header-bar class="panel-header-1 marginTop40">
         <div class="logo">
@@ -12,7 +12,7 @@
     </ion-header-bar>
 
     <ion-content class="create-walk-footer-space">
-        <div class="panel-date-created" ng-show = "!data.nextWalk">
+        <div class="panel-date-created" >
             <div>
                 <label>
                     <span class="icon"><img src="img/icon_calendar_48.png"/></span>
@@ -29,72 +29,13 @@
             <label class="font11 yellow-color">Invite Friends</label>
         </div>
 
-        <div class="panel-invite-list">
+        <div class="panel-invite-list" data-ng-repeat="invities in myInvities" data-ng-if="!isFirstTime()">
             <img src="img/img_people1.png">
-            <h2>Grant Mueller</h2>
+            <h2>{{invities.username}}</h2>
             <button>Invite</button>
         </div>
 
-        <div class="panel-invite-list">
-            <img src="img/img_people2.png">
-            <h2>Don Casey</h2>
-            <button class="active">Invited</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_people3.png">
-            <h2>Grace Walter</h2>
-            <button>Invite</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_no_image_yellow.png">
-            <h2>Anna Johnson</h2>
-            <button>Invite</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_people4.png">
-            <h2>Julia Mckinson</h2>
-            <button>Invite</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_no_image_yellow.png">
-            <h2>Anna Johnson</h2>
-            <button class="active">Invited</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_people2.png">
-            <h2>Don Casey</h2>
-            <button>Invite</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_people3.png">
-            <h2>Grace Walter</h2>
-            <button>Invite</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_no_image_yellow.png">
-            <h2>Anna Johnson</h2>
-            <button>Invite</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_people4.png">
-            <h2>Julia Mckinson</h2>
-            <button>Invite</button>
-        </div>
-
-        <div class="panel-invite-list">
-            <img src="img/img_no_image_yellow.png">
-            <h2>Anna Johnson</h2>
-            <button>Invite</button>
-        </div>
-
+       
     </ion-content>
 
     <ion-footer-bar>

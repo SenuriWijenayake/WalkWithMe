@@ -9,7 +9,7 @@ angular.module('WalkWithMeApp.services',[]).factory('userService', function($htt
       ServerStats : function (){              
               return $http({
                   method : 'GET',
-                  url: '/json/stat.json'
+                  url: 'http://localhost/WalkWithMe/php/index.php/WalkController/serverStat'
               });
       }, // end function      
       Register : function (){              
@@ -25,7 +25,26 @@ angular.module('WalkWithMeApp.services',[]).factory('userService', function($htt
                   url: 'http://localhost/WalkWithMe/php/index.php/WalkController/loadMenu',
                   data : {"mobileNumber" : mobileNumber , "username" : username}
         });
-      }// end function
+      },
+
+      InviteService : function (mobileNumber, username){              
+              
+              return $http({
+                  method : 'GET',
+                  url: 'http://localhost/WalkWithMe/php/index.php/WalkController/loadUser',
+                  data : {"mobileNumber" : mobileNumber , "username" : username}
+        });
+      },
+
+      HistoryService : function (mobileNumber, username){              
+              
+              return $http({
+                  method : 'GET',
+                  url: 'http://localhost/WalkWithMe/php/index.php/WalkController/getHistory',
+                  data : {"mobileNumber" : mobileNumber , "username" : username}
+        });
+      }
+      // end function
 
     }; // end return     
 })
